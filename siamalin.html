@@ -58,12 +58,12 @@
                         <img src="[Link ke Screenshot Dashboard Mobile]" alt="Dashboard Pengguna">
                         <p>Dashboard Pengguna</p>
                     </div>
-                     <div class="gallery-item">
-                        <img src="[images/presensi1.png]" alt="Presensi Berbasis Wajah & Lokasi">
-                        <p>Presensi Berbasis Wajah & Lokasi</p>
-                    </div>
                     <div class="gallery-item">
-                        <img src="[images/presensi2.png]" alt="Presensi Berbasis Wajah & Lokasi">
+                        <div class="mini-gallery-grid">
+                            <img src="images/presensi1.png" alt="Tampilan Absensi Mobile">
+                            <img src="images/presensi2.png" alt="Verifikasi wajah berhasil">
+                            <img src="images/presensi3.png" alt="Peringatan di luar radius">
+                        </div>
                         <p>Presensi Berbasis Wajah & Lokasi</p>
                     </div>
                     <div class="gallery-item">
@@ -87,5 +87,32 @@
         </footer>
     </div>
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const slideshows = document.querySelectorAll('.slideshow-container');
+    slideshows.forEach(slideshow => {
+        slideshow.setAttribute('data-current-slide', '1');
+        showSlide(slideshow, 1);
+    });
+});
+
+function changeSlide(arrowButton, n) {
+    const slideshow = arrowButton.closest('.slideshow-container');
+    let slideIndex = parseInt(slideshow.getAttribute('data-current-slide'));
+    slideIndex += n;
+    showSlide(slideshow, slideIndex);
+}
+
+function showSlide(slideshow, n) {
+    const slides = slideshow.querySelectorAll('.slide');
+    if (n > slides.length) { n = 1; }
+    if (n < 1) { n = slides.length; }
+
+    slides.forEach(slide => slide.style.display = "none");
+    slides[n - 1].style.display = "block";
+    slideshow.setAttribute('data-current-slide', n);
+}
+</script>
 </body>
 </html>
