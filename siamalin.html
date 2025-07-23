@@ -50,34 +50,72 @@
             <section id="gallery">
                 <h2>Galeri Screenshot</h2>
                 <div class="gallery-grid">
+                    
                     <div class="gallery-item">
-                        <img src="images/login.png" alt="Halaman Login">
+                        <div class="slideshow-container">
+                            <div class="slide fade"><img src="images/presensi1.png" alt="Tampilan absensi mobile"></div>
+                            <div class="slide fade"><img src="images/presensi2.png" alt="Verifikasi wajah berhasil"></div>
+                            <div class="slide fade"><img src="images/presensi3.png" alt="Proses pengambilan foto absensi"></div>
+                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
+                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
+                        </div>
                         <p>Login</p>
                     </div>
+
                     <div class="gallery-item">
-                        <img src="[Link ke Screenshot Dashboard Mobile]" alt="Dashboard Pengguna">
+                        <div class="slideshow-container">
+                            <div class="slide fade"><img src="images/presensi1.png" alt="Tampilan absensi mobile"></div>
+                            <div class="slide fade"><img src="images/presensi2.png" alt="Verifikasi wajah berhasil"></div>
+                            <div class="slide fade"><img src="images/presensi3.png" alt="Proses pengambilan foto absensi"></div>
+                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
+                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
+                        </div>
                         <p>Dashboard Pengguna</p>
                     </div>
+                    
                     <div class="gallery-item">
-                        <div class="mini-gallery-grid">
-                            <img src="images/presensi1.png" alt="Tampilan Absensi Mobile">
-                            <img src="images/presensi2.png" alt="Verifikasi wajah berhasil">
-                            <img src="images/presensi3.png" alt="Peringatan di luar radius">
+                        <div class="slideshow-container">
+                            <div class="slide fade"><img src="images/presensi1.png" alt="Tampilan absensi mobile"></div>
+                            <div class="slide fade"><img src="images/presensi2.png" alt="Verifikasi wajah berhasil"></div>
+                            <div class="slide fade"><img src="images/presensi3.png" alt="Proses pengambilan foto absensi"></div>
+                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
+                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
                         </div>
                         <p>Presensi Berbasis Wajah & Lokasi</p>
                     </div>
+
                     <div class="gallery-item">
-                        <img src="[Link ke Screenshot Halaman Patroli]" alt="Sistem Patroli Real-Time">
+                        <div class="slideshow-container">
+                             <div class="slide fade"><img src="images/patroli-1.png" alt="Halaman utama fitur patroli"></div>
+                             <div class="slide fade"><img src="images/patroli-2.png" alt="Tampilan patroli saat aktif"></div>
+                             <div class="slide fade"><img src="images/patroli-3.png" alt="Detail histori jejak patroli"></div>
+                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
+                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
+                        </div>
                         <p>Sistem Patroli Real-Time</p>
                     </div>
+
                     <div class="gallery-item">
-                        <img src="[Link ke Screenshot Form Laporan]" alt="Pelaporan Insiden & Kegiatan">
+                        <div class="slideshow-container">
+                            <div class="slide fade"><img src="images/laporan-1.png" alt="Daftar laporan yang telah dibuat"></div>
+                            <div class="slide fade"><img src="images/laporan-2.png" alt="Formulir pembuatan laporan baru"></div>
+                            <div class="slide fade"><img src="images/laporan-3.png" alt="Detail laporan dengan status dari atasan"></div>
+                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
+                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
+                        </div>
                         <p>Pelaporan Insiden & Kegiatan</p>
                     </div>
+                    
                     <div class="gallery-item">
-                        <img src="[Link ke Screenshot Histori Presensi]" alt="Histori Presensi Bulanan">
+                        <div class="slideshow-container">
+                            <div class="slide fade"><img src="images/histori-1.png" alt="Halaman filter histori presensi"></div>
+                            <div class="slide fade"><img src="images/histori-2.png" alt="Tampilan daftar histori presensi bulanan"></div>
+                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
+                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
+                        </div>
                         <p>Histori Presensi Bulanan</p>
                     </div>
+
                 </div>
             </section>
         </main>
@@ -87,8 +125,8 @@
         </footer>
     </div>
 
-
 <script>
+// SCRIPT UNTUK SLIDESHOW
 document.addEventListener('DOMContentLoaded', function() {
     const slideshows = document.querySelectorAll('.slideshow-container');
     slideshows.forEach(slideshow => {
@@ -108,7 +146,7 @@ function showSlide(slideshow, n) {
     const slides = slideshow.querySelectorAll('.slide');
     if (n > slides.length) { n = 1; }
     if (n < 1) { n = slides.length; }
-
+    
     slides.forEach(slide => slide.style.display = "none");
     slides[n - 1].style.display = "block";
     slideshow.setAttribute('data-current-slide', n);
