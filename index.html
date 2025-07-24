@@ -8,21 +8,71 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <div class="hero">
-                <h1>Tajri Ramal Muzi</h1>
-                <p class="subtitle">Full-stack Developer | Mahasiswa Teknik Elektro (Universitas Diponegoro) - Konsentrasi Teknologi Informasi]</p>
+<div class="container">
+    <header>
+        <div class="hero">
+            <h1>Tajri Ramal Muzi</h1>
+            <div class="tagline">
+                <span class="highlight">IT Enthusiasm</span>
+                <span class="divider">|</span>
+                <span>Electrical Engineering Student - IT Concentration</span>
+            </div>
+            
+            <div class="intro-box">
                 <p class="intro">
-                    []
+                    Bridging electrical engineering and software development to build 
+                    <span class="highlight-text">innovative digital solutions</span>. 
+                    Passionate about creating fullstack applications with 
+                    <span class="highlight-text">real-world impact</span>.
                 </p>
             </div>
-        </header>
+            
+            <div class="cta-buttons">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-code"></i> View My Work
+                </a>
+            </div>
+        </div>
+    </header>
 
         <main>
+            <section id="skills">
+                <h2>Kemampuan Teknis</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <div class="tech-stack">
+                            <span>HTML/CSS</span>
+                            <span>JavaScript</span>
+                            <span>React</span>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <div class="tech-stack">
+                            <span>PHP</span>
+                            <span>Laravel</span>
+                            <span>Python</span>
+                            <span>Flask</span>
+                            <span>Node.js</span>
+                        </div>
+                    </div>
+                    <div class="skill-category">
+                        <h3>Database</h3>
+                        <div class="tech-stack">
+                            <span>MySQL</span>
+                            <span>MongoDB</span>
+                            <span>SQLite</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section id="projects">
                 <h2>Proyek Unggulan</h2>
 
@@ -57,18 +107,45 @@
                     <a href="inventaris.html" class="btn">Lihat Detail Proyek &rarr;</a>
                 </div>
             </section>
+
+            <section class="cta-section">
+                <h2>Tertarik dengan pekerjaan saya?</h2>
+                <p>Saya terbuka untuk peluang kerja sama atau diskusi lebih lanjut tentang proyek-proyek serupa.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:ramalmuzitajri@gmail.com" class="btn btn-primary">Hubungi Saya</a>
+                </div>
+            </section>
         </main>
 
         <footer>
-            <p>Hubungi saya:</p>
             <div class="social-links">
-                <a href="[https://github.com/tajri15]" target="_blank">GitHub</a> &bull;
-                <a href="[https://linkedin.com/in/tajriramalmuzi]" target="_blank">LinkedIn</a> &bull;
-                <a href="mailto:[ramalmuzitajri@gmail.com]">Email</a>
+                <a href="https://github.com/tajri15" target="_blank"><i class="fab fa-github"></i> GitHub</a> &bull;
+                <a href="https://linkedin.com/in/tajriramalmuzi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &bull;
+                <a href="mailto:ramalmuzitajri@gmail.com"><i class="fas fa-envelope"></i> Email</a>
             </div>
             <p class="copyright">&copy; 2025 - Dibuat oleh Tajri Ramal Muzi</p>
         </footer>
     </div>
 
+    <script>
+    // Animasi saat scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const animateElements = document.querySelectorAll('.project-card, .skill-category, section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animateElements.forEach((el, index) => {
+            el.classList.add(`delay-${(index % 3) + 1}`);
+            observer.observe(el);
+        });
+    });
+    </script>
+    <script src="js/animasi.js"></script>
 </body>
 </html>

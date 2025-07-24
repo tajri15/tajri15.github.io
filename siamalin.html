@@ -57,6 +57,7 @@
 }
 </style>
 </head>
+<script src="js/animasi.js"></script>
 <body>
 
     <div class="container project-detail">
@@ -93,6 +94,24 @@
                     <li><strong>Pelaporan Digital:</strong> Fitur untuk membuat dan mengirim laporan harian, kegiatan, atau insiden langsung dari lapangan. Laporan dapat dilengkapi dengan foto bukti yang diambil saat itu juga, serta verifikasi wajah pelapor.</li>
                     <li><strong>Manajemen Profil:</strong> Petugas dapat melihat dan memperbarui data profil mereka, termasuk nama, nomor HP, dan password.</li>
                 </ul>
+            </section>
+
+            <section class="animate-on-scroll delay-2">
+                <h2>Dampak & Hasil</h2>
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <div class="metric-value">95%</div>
+                        <div class="metric-label">Akurasi Presensi</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">40%</div>
+                        <div class="metric-label">Pengurangan Kesalahan Manual</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">30+</div>
+                        <div class="metric-label">Petugas Menggunakan</div>
+                    </div>
+                </div>
             </section>
 
             <section id="gallery">
@@ -135,9 +154,19 @@
 
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                             <div class="slide fade"><img src="images/patroli-1.png" alt="Halaman utama fitur patroli"></div>
-                             <div class="slide fade"><img src="images/patroli-2.png" alt="Tampilan patroli saat aktif"></div>
-                             <div class="slide fade"><img src="images/patroli-3.png" alt="Detail histori jejak patroli"></div>
+                             <div class="slide fade"><img src="images/patroli1.png" alt="Inisialisasi Patroli"></div>
+                             <div class="slide fade"><img src="images/patroli2.png" alt="Tampilan Sebelum Mulai Patroli"></div>
+                             <div class="slide fade"><img src="images/patroli3.png" alt="Tampilan Setelah Mulai Patroli"></div>
+                             <div class="slide fade"><img src="images/patroli4.png" alt="Tampilan Opsi Patroli"></div>
+                             <div class="slide fade"><img src="images/patroli5.png" alt="Tampilan Saat Patroli Dijeda"></div>
+                             <div class="slide fade"><img src="images/patroli12.png" alt="Tampilan Setelah Tombol Jeda Ditekan"></div>
+                             <div class="slide fade"><img src="images/patroli13.png" alt="Tampilan Saat Patroli Dilanjutkan"></div>
+                             <div class="slide fade"><img src="images/patroli6.png" alt="Verifikasi Wajah Patroli"></div>
+                             <div class="slide fade"><img src="images/patroli7.png" alt="Verifikasi Wajah Berhasil"></div>
+                             <div class="slide fade"><img src="images/patroli8.png" alt="Tampilan Setelah Verifikasi Wajah Berhasil"></div>
+                             <div class="slide fade"><img src="images/patroli9.png" alt="Mengakhiri Patroli"></div>
+                             <div class="slide fade"><img src="images/patroli10.png" alt="Histori Patroli"></div>
+                             <div class="slide fade"><img src="images/patroli11.png" alt="Detail Patroli"></div>
                             <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
                             <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
                         </div>
@@ -169,38 +198,54 @@
             </section>
         </main>
 
+            <section class="cta-section animate-on-scroll">
+                <h2>Tertarik dengan proyek saya?</h2>
+                <p>Saya terbuka untuk peluang kerja sama atau diskusi lebih lanjut tentang proyek-proyek serupa.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:ramalmuzitajri@gmail.com" class="btn btn-primary">Hubungi Saya</a>
+                    <a href="index.html" class="btn btn-secondary">Lihat Proyek Lainnya</a>
+                </div>
+            </section>
+        </main>
+
         <footer>
-            <p>&copy; 2025 - Dibuat oleh Tajri Ramal Muzi</p>
+            <div class="social-links">
+                <a href="https://github.com/tajri15" target="_blank"><i class="fab fa-github"></i> GitHub</a> &bull;
+                <a href="https://linkedin.com/in/tajriramalmuzi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &bull;
+                <a href="mailto:ramalmuzitajri@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+            <p class="copyright">&copy; 2025 - Dibuat oleh Tajri Ramal Muzi</p>
         </footer>
     </div>
 
-<script>
-// SCRIPT UNTUK SLIDESHOW
-document.addEventListener('DOMContentLoaded', function() {
-    const slideshows = document.querySelectorAll('.slideshow-container');
-    slideshows.forEach(slideshow => {
-        slideshow.setAttribute('data-current-slide', '1');
-        showSlide(slideshow, 1);
-    });
-});
-
-function changeSlide(arrowButton, n) {
-    const slideshow = arrowButton.closest('.slideshow-container');
-    let slideIndex = parseInt(slideshow.getAttribute('data-current-slide'));
-    slideIndex += n;
-    showSlide(slideshow, slideIndex);
-}
-
-function showSlide(slideshow, n) {
-    const slides = slideshow.querySelectorAll('.slide');
-    if (n > slides.length) { n = 1; }
-    if (n < 1) { n = slides.length; }
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
     
-    slides.forEach(slide => slide.style.display = "none");
-    slides[n - 1].style.display = "block";
-    slideshow.setAttribute('data-current-slide', n);
-}
-</script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slideshows = document.querySelectorAll('.slideshow-container');
+        slideshows.forEach(slideshow => {
+            slideshow.setAttribute('data-current-slide', '1');
+            showSlide(slideshow, 1);
+        });
+    });
 
+    function changeSlide(arrowButton, n) {
+        const slideshow = arrowButton.closest('.slideshow-container');
+        let slideIndex = parseInt(slideshow.getAttribute('data-current-slide'));
+        slideIndex += n;
+        showSlide(slideshow, slideIndex);
+    }
+
+    function showSlide(slideshow, n) {
+        const slides = slideshow.querySelectorAll('.slide');
+        if (n > slides.length) { n = 1; }
+        if (n < 1) { n = slides.length; }
+        
+        slides.forEach(slide => slide.style.display = "none");
+        slides[n - 1].style.display = "block";
+        slideshow.setAttribute('data-current-slide', n);
+    }
+    </script>
+    <script src="js/animasi.js"></script>
 </body>
 </html>

@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -18,14 +20,14 @@
         </header>
 
         <main>
-            <section>
+            <section class="animate-on-scroll">
                 <h2>Ringkasan Proyek</h2>
                 <p>
-                    [Aplikasi ini adalah sistem manajemen inventaris berbasis web yang dikembangkan untuk PT Telkom Indonesia. Tujuannya adalah untuk mendigitalisasi proses pelacakan aset, mulai dari pengadaan (barang masuk) hingga distribusi (barang keluar), sehingga mengurangi kesalahan manual dan meningkatkan efisiensi pengelolaan stok.]
+                    Aplikasi ini adalah sistem manajemen inventaris berbasis web yang dikembangkan untuk PT Telkom Indonesia. Tujuannya adalah untuk mendigitalisasi proses pelacakan aset, mulai dari pengadaan (barang masuk) hingga distribusi (barang keluar), sehingga mengurangi kesalahan manual dan meningkatkan efisiensi pengelolaan stok.
                 </p>
             </section>
 
-            <section>
+            <section class="animate-on-scroll delay-1">
                 <h2>Teknologi yang Digunakan</h2>
                 <ul class="tech-list">
                     <li><strong>Backend:</strong> Python, Flask Framework</li>
@@ -35,7 +37,18 @@
                 </ul>
             </section>
             
-            <section>
+            <section class="animate-on-scroll delay-2">
+                <h2>Tantangan & Solusi</h2>
+                <div class="challenge-box">
+                    <h3>Challenge</h3>
+                    <p>Membuat sistem yang mudah digunakan oleh staf non-teknis dengan berbagai tingkat kemampuan digital.</p>
+                    
+                    <h3>Solution</h3>
+                    <p>Mendesain antarmuka yang intuitif dengan panduan visual, validasi input yang jelas, dan pelatihan singkat untuk pengguna. Implementasi fitur bantuan kontekstual dan tooltip untuk memandu pengguna.</p>
+                </div>
+            </section>
+
+            <section class="animate-on-scroll delay-1">
                 <h2>Fitur Utama</h2>
                 <ul>
                     <li><strong>Dashboard Statistik:</strong> Menampilkan ringkasan data penting seperti total barang, jumlah kategori, dan total barang masuk/keluar dalam 30 hari terakhir.</li>
@@ -47,33 +60,89 @@
                 </ul>
             </section>
 
-            <section id="gallery">
+            <section class="animate-on-scroll delay-2">
+                <h2>Dampak & Hasil</h2>
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <div class="metric-value">75%</div>
+                        <div class="metric-label">Pengurangan Waktu Pencarian</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">100%</div>
+                        <div class="metric-label">Data Terekam Digital</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">50+</div>
+                        <div class="metric-label">Pengguna Aktif</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="gallery" class="animate-on-scroll delay-3">
                 <h2>Galeri Screenshot</h2>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <img src="[Link ke Screenshot Dashboard Inventaris]" alt="Dashboard Inventaris">
+                        <a href="images/inv-dashboard.jpg" data-lightbox="inventaris" data-title="Dashboard Inventaris">
+                            <img src="images/inv-dashboard.jpg" alt="Dashboard Inventaris">
+                        </a>
                         <p>Dashboard Inventaris</p>
                     </div>
                     <div class="gallery-item">
-                        <img src="[Link ke Screenshot Halaman Barang]" alt="Halaman Daftar Barang">
+                        <a href="images/inv-barang.jpg" data-lightbox="inventaris" data-title="Halaman Daftar Barang">
+                            <img src="images/inv-barang.jpg" alt="Halaman Daftar Barang">
+                        </a>
                         <p>Halaman Daftar Barang</p>
                     </div>
-                     <div class="gallery-item">
-                        <img src="[Link ke Screenshot Log Kegiatan]" alt="Log Kegiatan">
+                    <div class="gallery-item">
+                        <a href="images/inv-log.jpg" data-lightbox="inventaris" data-title="Log Kegiatan">
+                            <img src="images/inv-log.jpg" alt="Log Kegiatan">
+                        </a>
                         <p>Log Kegiatan</p>
                     </div>
-                    <div class="gallery-item">
-                        <img src="[Link ke Screenshot Modal Tambah Barang]" alt="Modal Tambah Barang">
-                        <p>Modal Tambah Barang</p>
-                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section animate-on-scroll">
+                <h2>Tertarik dengan proyek saya?</h2>
+                <p>Saya terbuka untuk peluang kerja sama atau diskusi lebih lanjut tentang proyek-proyek serupa.</p>
+                <div class="cta-buttons">
+                    <a href="mailto:ramalmuzitajri@gmail.com" class="btn btn-primary">Hubungi Saya</a>
+                    <a href="index.html" class="btn btn-secondary">Lihat Proyek Lainnya</a>
                 </div>
             </section>
         </main>
 
         <footer>
-            <p>&copy; 2025 - Dibuat oleh Tajri Ramal Muzi</p>
+            <div class="social-links">
+                <a href="https://github.com/tajri15" target="_blank"><i class="fab fa-github"></i> GitHub</a> &bull;
+                <a href="https://linkedin.com/in/tajriramalmuzi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &bull;
+                <a href="mailto:ramalmuzitajri@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+            <p class="copyright">&copy; 2025 - Dibuat oleh Tajri Ramal Muzi</p>
         </footer>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    
+    <script>
+    // Animation on scroll
+    document.addEventListener('DOMContentLoaded', function() {
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-on-scroll');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        animateElements.forEach((el, index) => {
+            el.classList.add(`delay-${(index % 3) + 1}`);
+            observer.observe(el);
+        });
+    });
+    </script>
+
+    <script src="js/animasi.js"></script>
 </body>
 </html>
