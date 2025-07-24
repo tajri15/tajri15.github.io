@@ -592,7 +592,37 @@ footer {
     font-size: 0.9em;
 }
 
-/* Light theme adjustment */
 body.light-theme .back-button {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px; 
+  margin-bottom: 25px;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-text {
+  text-align: center; 
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+  }
+  .hero-text, .hero {
+    text-align: center;
+  }
 }
