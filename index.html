@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tajri Ramal Muzi - Portofolio</title>
+    <title>Tajri Ramal Muzi - Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,7 +17,7 @@
         <div class="hero">
             <h1>Tajri Ramal Muzi</h1>
             <div class="tagline">
-                <span class="highlight">IT Enthusiasm</span>
+                <span class="highlight">IT Enthusiast</span>
                 <span class="divider">|</span>
                 <span>Electrical Engineering Student - IT Concentration</span>
             </div>
@@ -41,7 +41,7 @@
 
         <main>
             <section id="skills">
-                <h2>Kemampuan Teknis</h2>
+                <h2>Technical Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
                         <h3>Frontend</h3>
@@ -74,12 +74,12 @@
             </section>
 
             <section id="projects">
-                <h2>Proyek Unggulan</h2>
+                <h2>Featured Projects</h2>
 
                 <div class="project-card">
-                    <h3>Sistem Absensi & Patroli Keamanan (SiAmalin)</h3>
+                    <h3>Attendance & Security Patrol System (SiAmalin)</h3>
                     <p>
-                        Aplikasi web komprehensif untuk manajemen petugas keamanan, dilengkapi fitur absensi berbasis pengenalan wajah, pemantauan patroli real-time, manajemen jadwal shift, dan pelaporan kinerja.
+                        A comprehensive web application for security officer management, featuring face recognition-based attendance, real-time patrol monitoring, shift schedule management, and performance reporting.
                     </p>
                     <div class="tech-stack">
                         <span>PHP</span>
@@ -89,13 +89,13 @@
                         <span>Face-api.js</span>
                         <span>Leaflet.js</span>
                     </div>
-                    <a href="siamalin.html" class="btn">Lihat Detail Proyek &rarr;</a>
+                    <a href="siamalin.html" class="btn">View Project Details &rarr;</a>
                 </div>
 
                 <div class="project-card">
-                    <h3>Sistem Manajemen Inventaris PT Telkom</h3>
+                    <h3>Inventory Management System for PT Telkom</h3>
                     <p>
-                        Aplikasi web untuk melacak dan mengelola inventaris barang, mencakup pencatatan barang masuk dan keluar, manajemen kategori, serta log aktivitas untuk audit.
+                        A web application to track and manage inventory, covering the recording of incoming and outgoing goods, category management, and activity logs for auditing.
                     </p>
                     <div class="tech-stack">
                         <span>Python</span>
@@ -104,15 +104,15 @@
                         <span>Bootstrap 5</span>
                         <span>SQLite</span>
                     </div>
-                    <a href="inventaris.html" class="btn">Lihat Detail Proyek &rarr;</a>
+                    <a href="inventaris.html" class="btn">View Project Details &rarr;</a>
                 </div>
             </section>
 
             <section class="cta-section">
-                <h2>Tertarik dengan pekerjaan saya?</h2>
-                <p>Saya terbuka untuk peluang kerja sama atau diskusi lebih lanjut tentang proyek-proyek serupa.</p>
+                <h2>Interested in my work?</h2>
+                <p>I am open to collaboration opportunities or further discussion about similar projects.</p>
                 <div class="cta-buttons">
-                    <a href="mailto:ramalmuzitajri@gmail.com" class="btn btn-primary">Hubungi Saya</a>
+                    <a href="mailto:ramalmuzitajri@gmail.com" class="btn btn-primary">Contact Me</a>
                 </div>
             </section>
         </main>
@@ -123,29 +123,9 @@
                 <a href="https://linkedin.com/in/tajriramalmuzi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &bull;
                 <a href="mailto:ramalmuzitajri@gmail.com"><i class="fas fa-envelope"></i> Email</a>
             </div>
-            <p class="copyright">&copy; 2025 - Dibuat oleh Tajri Ramal Muzi</p>
+            <p class="copyright">&copy; 2025 - Created by Tajri Ramal Muzi</p>
         </footer>
     </div>
-
-    <script>
-    // Animasi saat scroll
-    document.addEventListener('DOMContentLoaded', function() {
-        const animateElements = document.querySelectorAll('.project-card, .skill-category, section');
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-on-scroll');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        animateElements.forEach((el, index) => {
-            el.classList.add(`delay-${(index % 3) + 1}`);
-            observer.observe(el);
-        });
-    });
-    </script>
     <script src="js/animasi.js"></script>
 </body>
 </html>

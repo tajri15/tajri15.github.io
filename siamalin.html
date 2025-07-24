@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyek SiAmalin - Portofolio Tajri</title>
+    <title>SiAmalin Project - Tajri's Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <style>
 .slideshow-container {
     position: relative;
@@ -61,137 +61,156 @@
 <body>
 
     <div class="container project-detail">
-        <header>
-            <a href="index.html" class="back-link">&larr; Kembali ke Portofolio</a>
-            <h1>Sistem Absensi & Patroli Keamanan (SiAmalin)</h1>
+        <header class="project-header">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Portfolio</span>
+            </a>
+            <h1>Attendance & Security Patrol System (SiAmalin)</h1>
         </header>
 
         <main>
             <section>
-                <h2>Ringkasan Proyek</h2>
+                <h2>Project Summary</h2>
                 <p>
-                    Siamalin adalah proyek tugas akhir saya, sebuah aplikasi web progresif (PWA) yang dirancang khusus untuk memodernisasi dan mendigitalkan operasional harian petugas keamanan di lingkungan universitas. Aplikasi ini berfokus pada peningkatan akuntabilitas, efisiensi pelaporan, dan pemantauan aktivitas patroli secara real-time. Dengan antarmuka yang mobile-first, petugas dapat dengan mudah mengakses semua fitur penting langsung dari smartphone mereka.
+                    Siamalin was my final project, an application specifically designed to modernize and digitize the daily operations of security officers on a university campus. This application focuses on improving accountability, reporting efficiency, and real-time monitoring of patrol activities. With a mobile-first interface, officers can easily access all essential features directly from their smartphones.
                 </p>
             </section>
 
             <section>
-                <h2>Teknologi yang Digunakan</h2>
+                <h2>Technologies Used</h2>
                 <ul class="tech-list">
                     <li><strong>Backend:</strong> PHP, Laravel Framework</li>
                     <li><strong>Database:</strong> MongoDB</li>
                     <li><strong>Frontend:</strong> Blade Template, JavaScript, Bootstrap 5</li>
-                    <li><strong>Fitur Kunci:</strong> Face-api.js (untuk pengenalan wajah), Leaflet.js (untuk pemetaan GPS), DeepFace (Python) untuk service backend.</li>
+                    <li><strong>Key Features:</strong> Face-api.js (for face recognition), Leaflet.js (for GPS mapping), DeepFace (Python) for the backend service.</li>
                 </ul>
             </section>
             
             <section>
-                <h2>Fitur Utama (Aplikasi Mobile Petugas)</h2>
+                <h2>Main Features (Officer's Mobile App)</h2>
                 <ul>
-                    <li><strong>Dashboard Petugas:</strong> Halaman utama yang menampilkan ringkasan presensi harian, menu navigasi utama, dan rekapitulasi kehadiran dalam sebulan.</li>
-                    <li><strong>Absensi dengan Verifikasi Wajah:</strong> Petugas melakukan absensi masuk dan pulang dengan memindai wajah mereka. Sistem akan memvalidasi kecocokan wajah dan lokasi GPS untuk memastikan kehadiran yang sah di area tugas.</li>
-                    <li><strong>Mulai & Lacak Patroli:</strong> Petugas dapat memulai sesi patroli, yang akan secara otomatis melacak rute pergerakan mereka menggunakan GPS. Aplikasi juga memberikan peringatan jika petugas keluar dari radius area kerja yang telah ditentukan.</li>
-                    <li><strong>Histori Patroli & Presensi:</strong> Petugas dapat melihat riwayat patroli dan presensi mereka sebelumnya, lengkap dengan detail waktu, durasi, dan jejak rute di peta.</li>
-                    <li><strong>Pelaporan Digital:</strong> Fitur untuk membuat dan mengirim laporan harian, kegiatan, atau insiden langsung dari lapangan. Laporan dapat dilengkapi dengan foto bukti yang diambil saat itu juga, serta verifikasi wajah pelapor.</li>
-                    <li><strong>Manajemen Profil:</strong> Petugas dapat melihat dan memperbarui data profil mereka, termasuk nama, nomor HP, dan password.</li>
+                    <li><strong>Officer Dashboard:</strong> The main page displays a summary of daily attendance, main navigation menus, and a monthly attendance recap.</li>
+                    <li><strong>Attendance with Face Verification:</strong> Officers clock in and out by scanning their faces. The system validates the face match and GPS location to ensure legitimate presence in the work area.</li>
+                    <li><strong>Start & Track Patrol:</strong> Officers can start a patrol session, which automatically tracks their movement route using GPS. The application also provides alerts if an officer moves outside the designated work radius.</li>
+                    <li><strong>Patrol & Attendance History:</strong> Officers can view their past patrol and attendance history, complete with details on time, duration, and route tracking on a map.</li>
+                    <li><strong>Digital Reporting:</strong> A feature to create and submit daily reports, activities, or incidents directly from the field. Reports can be supplemented with photographic evidence taken on the spot, along with the reporter's face verification.</li>
+                    <li><strong>Profile Management:</strong> Officers can view and update their profile data, including name, phone number, and password.</li>
                 </ul>
             </section>
 
             <section class="animate-on-scroll delay-2">
-                <h2>Dampak & Hasil</h2>
+                <h2>Impact & Results</h2>
                 <div class="metrics-grid">
                     <div class="metric">
                         <div class="metric-value">95%</div>
-                        <div class="metric-label">Akurasi Presensi</div>
+                        <div class="metric-label">Attendance Accuracy</div>
                     </div>
                     <div class="metric">
                         <div class="metric-value">40%</div>
-                        <div class="metric-label">Pengurangan Kesalahan Manual</div>
+                        <div class="metric-label">Reduction in Manual Errors</div>
                     </div>
                     <div class="metric">
                         <div class="metric-value">30+</div>
-                        <div class="metric-label">Petugas Menggunakan</div>
+                        <div class="metric-label">Active Officers</div>
                     </div>
                 </div>
             </section>
 
             <section id="gallery">
-                <h2>Galeri Screenshot</h2>
+                <h2>Screenshot Gallery</h2>
                 <div class="gallery-grid">
                     
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/login.png" alt="Tampilan halaman login"></div>
+                            <div class="slide fade"><img src="images/login0.png" alt="Title"></div>
+                            <div class="slide fade"><img src="images/login.png" alt="Login page view"></div>
+                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
+                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
                         </div>
-                        <p>Halaman Login</p>
+                        <p>Login Page</p>
                     </div>
 
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/dashboard.jpg" alt="Dashboard Sebelum Presensi"></div>
-                            <div class="slide fade"><img src="images/dashboard2.jpg" alt="Dashboard Setelah Presensi"></div>
+                            <div class="slide fade"><img src="images/dashboard0.png" alt="Title"></div>
+                            <div class="slide fade"><img src="images/dashboard.jpg" alt="Dashboard Before Attendance"></div>
+                            <div class="slide fade"><img src="images/dashboard2.jpg" alt="Dashboard After Attendance"></div>
                             <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
                             <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
                         </div>
-                        <p>Dashboard User</p>
+                        <p>User Dashboard</p>
                     </div>
                     
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/presensi1.png" alt="Memuat Model"></div>
-                            <div class="slide fade"><img src="images/presensi2.png" alt="Verifikasi Titik Lokasi"></div>
-                            <div class="slide fade"><img src="images/presensi3.png" alt="Absen Masuk"></div>
-                            <div class="slide fade"><img src="images/presensi8.png" alt="Pop-up Absen Masuk"></div>
-                            <div class="slide fade"><img src="images/presensi4.png" alt="Absen Pulang"></div>
-                            <div class="slide fade"><img src="images/presensi9.png" alt="Pop-up Absen Pulang"></div>
-                            <div class="slide fade"><img src="images/presensi5.png" alt="Shift Tidak Tersedia"></div>
-                            <div class="slide fade"><img src="images/presensi6.png" alt="Diluar Jangkauan Kantor"></div>
-                            <div class="slide fade"><img src="images/presensi7.png" alt="Wajah Tidak Cocok"></div>
+                            <div class="slide fade"><img src="images/presensi0.png" alt="Title"></div>
+                            <div class="slide fade"><img src="images/presensi1.png" alt="Loading Model"></div>
+                            <div class="slide fade"><img src="images/presensi2.png" alt="Verifying Location Point"></div>
+                            <div class="slide fade"><img src="images/presensi3.png" alt="Clock In"></div>
+                            <div class="slide fade"><img src="images/presensi8.png" alt="Clock In Pop-up"></div>
+                            <div class="slide fade"><img src="images/presensi4.png" alt="Clock Out"></div>
+                            <div class="slide fade"><img src="images/presensi9.png" alt="Clock Out Pop-up"></div>
+                            <div class="slide fade"><img src="images/presensi5.png" alt="Shift Not Available"></div>
+                            <div class="slide fade"><img src="images/presensi6.png" alt="Outside Office Range"></div>
+                            <div class="slide fade"><img src="images/presensi7.png" alt="Face Not Matched"></div>
+                            <div class="slide fade"><img src="images/presensi7.png" alt="Attendance history filter page"></div>
+                            <div class="slide fade"><img src="images/histori1.png" alt="List of Selected Month"></div>
+                            <div class="slide fade"><img src="images/histori2.png" alt="Monthly attendance history list view"></div>
                             <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
                             <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
                         </div>
-                        <p>Presensi Berbasis Wajah & Lokasi</p>
+                        <p>Face & Location-Based Attendance</p>
                     </div>
 
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                             <div class="slide fade"><img src="images/patroli1.png" alt="Inisialisasi Patroli"></div>
-                             <div class="slide fade"><img src="images/patroli2.png" alt="Tampilan Sebelum Mulai Patroli"></div>
-                             <div class="slide fade"><img src="images/patroli3.png" alt="Tampilan Setelah Mulai Patroli"></div>
-                             <div class="slide fade"><img src="images/patroli4.png" alt="Tampilan Opsi Patroli"></div>
-                             <div class="slide fade"><img src="images/patroli5.png" alt="Tampilan Saat Patroli Dijeda"></div>
-                             <div class="slide fade"><img src="images/patroli12.png" alt="Tampilan Setelah Tombol Jeda Ditekan"></div>
-                             <div class="slide fade"><img src="images/patroli13.png" alt="Tampilan Saat Patroli Dilanjutkan"></div>
-                             <div class="slide fade"><img src="images/patroli6.png" alt="Verifikasi Wajah Patroli"></div>
-                             <div class="slide fade"><img src="images/patroli7.png" alt="Verifikasi Wajah Berhasil"></div>
-                             <div class="slide fade"><img src="images/patroli8.png" alt="Tampilan Setelah Verifikasi Wajah Berhasil"></div>
-                             <div class="slide fade"><img src="images/patroli9.png" alt="Mengakhiri Patroli"></div>
-                             <div class="slide fade"><img src="images/patroli10.png" alt="Histori Patroli"></div>
-                             <div class="slide fade"><img src="images/patroli11.png" alt="Detail Patroli"></div>
+                            <div class="slide fade"><img src="images/patroli0.png" alt="Title"></div>
+                            <div class="slide fade"><img src="images/patroli1.png" alt="Initializing Patrol"></div>
+                            <div class="slide fade"><img src="images/patroli2.png" alt="View Before Starting Patrol"></div>
+                            <div class="slide fade"><img src="images/patroli3.png" alt="View After Starting Patrol"></div>
+                            <div class="slide fade"><img src="images/patroli4.png" alt="Patrol Options View"></div>
+                            <div class="slide fade"><img src="images/patroli5.png" alt="View When Patrol is Paused"></div>
+                            <div class="slide fade"><img src="images/patroli12.png" alt="View After Pause Button is Pressed"></div>
+                            <div class="slide fade"><img src="images/patroli13.png" alt="View When Patrol is Resumed"></div>
+                            <div class="slide fade"><img src="images/patroli6.png" alt="Patrol Face Verification"></div>
+                            <div class="slide fade"><img src="images/patroli7.png" alt="Face Verification Successful"></div>
+                            <div class="slide fade"><img src="images/patroli8.png" alt="View After Successful Face Verification"></div>
+                            <div class="slide fade"><img src="images/patroli9.png" alt="Ending Patrol"></div>
+                            <div class="slide fade"><img src="images/patroli10.png" alt="Patrol History"></div>
+                            <div class="slide fade"><img src="images/patroli11.png" alt="Patrol Details"></div>
                             <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
                             <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
                         </div>
-                        <p>Sistem Patroli Real-Time</p>
+                        <p>Real-Time Patrol System</p>
                     </div>
 
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/laporan-1.png" alt="Daftar laporan yang telah dibuat"></div>
-                            <div class="slide fade"><img src="images/laporan-2.png" alt="Formulir pembuatan laporan baru"></div>
-                            <div class="slide fade"><img src="images/laporan-3.png" alt="Detail laporan dengan status dari atasan"></div>
+                            <div class="slide fade"><img src="images/laporan0.png" alt="Title"></div>
+                            <div class="slide fade"><img src="images/laporan1.png" alt="List of created reports"></div>
+                            <div class="slide fade"><img src="images/laporan2.png" alt="Report Details"></div>
+                            <div class="slide fade"><img src="images/laporan3.png" alt="Report details"></div>
+                            <div class="slide fade"><img src="images/laporan4.png" alt="Report details"></div>
+                            <div class="slide fade"><img src="images/laporan5.png" alt="Face Verification"></div>
+                            <div class="slide fade"><img src="images/laporan6.png" alt="Take Photo"></div>
+                            <div class="slide fade"><img src="images/laporan7.png" alt="Fill in Report Details"></div>
+                            <div class="slide fade"><img src="images/laporan7.png" alt="Report Sent"></div>
                             <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
                             <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
                         </div>
-                        <p>Pelaporan Insiden & Kegiatan</p>
+                        <p>Incident & Activity Reporting</p>
                     </div>
                     
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/histori-1.png" alt="Halaman filter histori presensi"></div>
-                            <div class="slide fade"><img src="images/histori-2.png" alt="Tampilan daftar histori presensi bulanan"></div>
+                            <div class="slide fade"><img src="images/profil0.png" alt="Title"></div>
+                            <div class="slide fade"><img src="images/profil1.png" alt="Profile Page"></div>
+                            <div class="slide fade"><img src="images/profil2.png" alt="Edit Profile Page"></div>
                             <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
                             <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
                         </div>
-                        <p>Histori Presensi Bulanan</p>
+                        <p>Officer Profile</p>
                     </div>
 
                 </div>
@@ -199,11 +218,11 @@
         </main>
 
             <section class="cta-section animate-on-scroll">
-                <h2>Tertarik dengan proyek saya?</h2>
-                <p>Saya terbuka untuk peluang kerja sama atau diskusi lebih lanjut tentang proyek-proyek serupa.</p>
+                <h2>Interested in my project?</h2>
+                <p>I am open to collaboration opportunities or further discussion about similar projects.</p>
                 <div class="cta-buttons">
-                    <a href="mailto:ramalmuzitajri@gmail.com" class="btn btn-primary">Hubungi Saya</a>
-                    <a href="index.html" class="btn btn-secondary">Lihat Proyek Lainnya</a>
+                    <a href="mailto:ramalmuzitajri@gmail.com" class="btn btn-primary">Contact Me</a>
+                    <a href="index.html" class="btn btn-secondary">See Other Projects</a>
                 </div>
             </section>
         </main>
@@ -214,7 +233,7 @@
                 <a href="https://linkedin.com/in/tajriramalmuzi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &bull;
                 <a href="mailto:ramalmuzitajri@gmail.com"><i class="fas fa-envelope"></i> Email</a>
             </div>
-            <p class="copyright">&copy; 2025 - Dibuat oleh Tajri Ramal Muzi</p>
+            <p class="copyright">&copy; 2025 - Created by Tajri Ramal Muzi</p>
         </footer>
     </div>
 

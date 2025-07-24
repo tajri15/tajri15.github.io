@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyek Inventaris - Portofolio Tajri</title>
+    <title>Inventory Project - Tajri's Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,100 +14,103 @@
 <body>
 
     <div class="container project-detail">
-        <header>
-            <a href="index.html" class="back-link">&larr; Kembali ke Portofolio</a>
-            <h1>Sistem Manajemen Inventaris PT Telkom</h1>
+        <header class="project-header">
+            <a href="index.html" class="back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Portfolio</span>
+            </a>
+            <h1>Inventory Management System for PT Telkom</h1>
         </header>
 
         <main>
             <section class="animate-on-scroll">
-                <h2>Ringkasan Proyek</h2>
+                <h2>Project Summary</h2>
                 <p>
-                    Aplikasi ini adalah sistem manajemen inventaris berbasis web yang dikembangkan untuk PT Telkom Indonesia. Tujuannya adalah untuk mendigitalisasi proses pelacakan aset, mulai dari pengadaan (barang masuk) hingga distribusi (barang keluar), sehingga mengurangi kesalahan manual dan meningkatkan efisiensi pengelolaan stok.
+                    This application is a web-based inventory management system developed for PT Telkom Indonesia. Its goal is to digitize the asset tracking process, from procurement (incoming items) to distribution (outgoing items), thereby reducing manual errors and improving stock management efficiency.
                 </p>
             </section>
 
             <section class="animate-on-scroll delay-1">
-                <h2>Teknologi yang Digunakan</h2>
+                <h2>Technologies Used</h2>
                 <ul class="tech-list">
                     <li><strong>Backend:</strong> Python, Flask Framework</li>
-                    <li><strong>Database:</strong> SQLite (dengan SQLAlchemy ORM)</li>
+                    <li><strong>Database:</strong> SQLite (with SQLAlchemy ORM)</li>
                     <li><strong>Frontend:</strong> HTML, Jinja2 Template Engine, CSS, JavaScript, Bootstrap 5</li>
-                    <li><strong>Fitur Kunci:</strong> Sistem otentikasi berbasis session, pagination, filtering.</li>
+                    <li><strong>Key Features:</strong> Session-based authentication system, pagination, filtering.</li>
                 </ul>
             </section>
             
             <section class="animate-on-scroll delay-2">
-                <h2>Tantangan & Solusi</h2>
+                <h2>Challenge & Solution</h2>
                 <div class="challenge-box">
                     <h3>Challenge</h3>
-                    <p>Membuat sistem yang mudah digunakan oleh staf non-teknis dengan berbagai tingkat kemampuan digital.</p>
+                    <p>Creating a system that is easy to use for non-technical staff with varying levels of digital literacy.</p>
                     
                     <h3>Solution</h3>
-                    <p>Mendesain antarmuka yang intuitif dengan panduan visual, validasi input yang jelas, dan pelatihan singkat untuk pengguna. Implementasi fitur bantuan kontekstual dan tooltip untuk memandu pengguna.</p>
+                    <p>Designing an intuitive interface with visual guides, clear input validation, and brief training for users. Implemented contextual help features and tooltips to guide users.</p>
                 </div>
             </section>
 
             <section class="animate-on-scroll delay-1">
-                <h2>Fitur Utama</h2>
+                <h2>Main Features</h2>
                 <ul>
-                    <li><strong>Dashboard Statistik:</strong> Menampilkan ringkasan data penting seperti total barang, jumlah kategori, dan total barang masuk/keluar dalam 30 hari terakhir.</li>
-                    <li><strong>Manajemen Barang (CRUD):</strong> Fungsi lengkap untuk menambah, membaca, memperbarui, dan menghapus data barang inventaris.</li>
-                    <li><strong>Pencarian dan Filter Dinamis:</strong> Pengguna dapat dengan mudah mencari barang berdasarkan nama atau kode, serta memfilter berdasarkan kategori.</li>
-                    <li><strong>Manajemen Kategori:</strong> Memungkinkan admin untuk mengelompokkan barang ke dalam kategori yang relevan untuk pengelolaan yang lebih terstruktur.</li>
-                    <li><strong>Pencatatan Barang Masuk & Keluar:</strong> Modul khusus untuk mencatat setiap transaksi barang yang masuk dari pemasok dan barang yang keluar untuk penggunaan internal.</li>
-                    <li><strong>Log Aktivitas:</strong> Setiap aksi penting (Create, Update, Delete) yang dilakukan oleh pengguna akan tercatat dalam log untuk keperluan audit dan pelacakan.</li>
+                    <li><strong>Statistics Dashboard:</strong> Displays a summary of key data such as total items, number of categories, and total incoming/outgoing items in the last 30 days.</li>
+                    <li><strong>Item Management (CRUD):</strong> Full functionality to add, read, update, and delete inventory item data.</li>
+                    <li><strong>Dynamic Search and Filter:</strong> Users can easily search for items by name or code, as well as filter by category.</li>
+                    <li><strong>Category Management:</strong> Allows admins to group items into relevant categories for more structured management.</li>
+                    <li><strong>Incoming & Outgoing Goods Recording:</strong> A dedicated module for recording every transaction of goods coming in from suppliers and goods going out for internal use.</li>
+                    <li><strong>Activity Log:</strong> Every important action (Create, Update, Delete) performed by a user is recorded in a log for audit and tracking purposes.</li>
                 </ul>
             </section>
 
             <section class="animate-on-scroll delay-2">
-                <h2>Dampak & Hasil</h2>
+                <h2>Impact & Results</h2>
                 <div class="metrics-grid">
                     <div class="metric">
                         <div class="metric-value">75%</div>
-                        <div class="metric-label">Pengurangan Waktu Pencarian</div>
+                        <div class="metric-label">Reduction in Search Time</div>
                     </div>
                     <div class="metric">
                         <div class="metric-value">100%</div>
-                        <div class="metric-label">Data Terekam Digital</div>
+                        <div class="metric-label">Digitally Recorded Data</div>
                     </div>
                     <div class="metric">
                         <div class="metric-value">50+</div>
-                        <div class="metric-label">Pengguna Aktif</div>
+                        <div class="metric-label">Active Users</div>
                     </div>
                 </div>
             </section>
 
             <section id="gallery" class="animate-on-scroll delay-3">
-                <h2>Galeri Screenshot</h2>
+                <h2>Screenshot Gallery</h2>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <a href="images/inv-dashboard.jpg" data-lightbox="inventaris" data-title="Dashboard Inventaris">
-                            <img src="images/inv-dashboard.jpg" alt="Dashboard Inventaris">
+                        <a href="images/inv-dashboard.jpg" data-lightbox="inventaris" data-title="Inventory Dashboard">
+                            <img src="images/inv-dashboard.jpg" alt="Inventory Dashboard">
                         </a>
-                        <p>Dashboard Inventaris</p>
+                        <p>Inventory Dashboard</p>
                     </div>
                     <div class="gallery-item">
-                        <a href="images/inv-barang.jpg" data-lightbox="inventaris" data-title="Halaman Daftar Barang">
-                            <img src="images/inv-barang.jpg" alt="Halaman Daftar Barang">
+                        <a href="images/inv-barang.jpg" data-lightbox="inventaris" data-title="Item List Page">
+                            <img src="images/inv-barang.jpg" alt="Item List Page">
                         </a>
-                        <p>Halaman Daftar Barang</p>
+                        <p>Item List Page</p>
                     </div>
                     <div class="gallery-item">
-                        <a href="images/inv-log.jpg" data-lightbox="inventaris" data-title="Log Kegiatan">
-                            <img src="images/inv-log.jpg" alt="Log Kegiatan">
+                        <a href="images/inv-log.jpg" data-lightbox="inventaris" data-title="Activity Log">
+                            <img src="images/inv-log.jpg" alt="Activity Log">
                         </a>
-                        <p>Log Kegiatan</p>
+                        <p>Activity Log</p>
                     </div>
                 </div>
             </section>
 
             <section class="cta-section animate-on-scroll">
-                <h2>Tertarik dengan proyek saya?</h2>
-                <p>Saya terbuka untuk peluang kerja sama atau diskusi lebih lanjut tentang proyek-proyek serupa.</p>
+                <h2>Interested in my project?</h2>
+                <p>I am open to collaboration opportunities or further discussion about similar projects.</p>
                 <div class="cta-buttons">
-                    <a href="mailto:ramalmuzitajri@gmail.com" class="btn btn-primary">Hubungi Saya</a>
-                    <a href="index.html" class="btn btn-secondary">Lihat Proyek Lainnya</a>
+                    <a href="mailto:ramalmuzitajri@gmail.com" class="btn btn-primary">Contact Me</a>
+                    <a href="index.html" class="btn btn-secondary">See Other Projects</a>
                 </div>
             </section>
         </main>
@@ -118,31 +121,11 @@
                 <a href="https://linkedin.com/in/tajriramalmuzi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &bull;
                 <a href="mailto:ramalmuzitajri@gmail.com"><i class="fas fa-envelope"></i> Email</a>
             </div>
-            <p class="copyright">&copy; 2025 - Dibuat oleh Tajri Ramal Muzi</p>
+            <p class="copyright">&copy; 2025 - Created by Tajri Ramal Muzi</p>
         </footer>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    
-    <script>
-    // Animation on scroll
-    document.addEventListener('DOMContentLoaded', function() {
-        const animateElements = document.querySelectorAll('.animate-on-scroll');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate-on-scroll');
-                }
-            });
-        }, { threshold: 0.1 });
-        
-        animateElements.forEach((el, index) => {
-            el.classList.add(`delay-${(index % 3) + 1}`);
-            observer.observe(el);
-        });
-    });
-    </script>
-
     <script src="js/animasi.js"></script>
 </body>
 </html>
