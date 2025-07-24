@@ -8,6 +8,54 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+.slideshow-container {
+    position: relative;
+    margin: auto;
+}
+.slide {
+    display: none;
+}
+
+.slide img, .gallery-item > img {
+    width: 100%;
+    vertical-align: middle;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.3);
+}
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+.fade {
+    animation-name: fade;
+    animation-duration: 0.5s;
+}
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+</style>
 </head>
 <body>
 
@@ -53,31 +101,32 @@
                     
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/presensi1.png" alt="Tampilan absensi mobile"></div>
-                            <div class="slide fade"><img src="images/presensi2.png" alt="Verifikasi wajah berhasil"></div>
-                            <div class="slide fade"><img src="images/presensi3.png" alt="Proses pengambilan foto absensi"></div>
-                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
-                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
+                            <div class="slide fade"><img src="images/login.png" alt="Tampilan halaman login"></div>
                         </div>
-                        <p>Login</p>
+                        <p>Halaman Login</p>
                     </div>
 
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/presensi1.png" alt="Tampilan absensi mobile"></div>
-                            <div class="slide fade"><img src="images/presensi2.png" alt="Verifikasi wajah berhasil"></div>
-                            <div class="slide fade"><img src="images/presensi3.png" alt="Proses pengambilan foto absensi"></div>
+                            <div class="slide fade"><img src="images/dashboard.jpg" alt="Dashboard Sebelum Presensi"></div>
+                            <div class="slide fade"><img src="images/dashboard2.jpg" alt="Dashboard Setelah Presensi"></div>
                             <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
                             <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
                         </div>
-                        <p>Dashboard Pengguna</p>
+                        <p>Dashboard User</p>
                     </div>
                     
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/presensi1.png" alt="Tampilan absensi mobile"></div>
-                            <div class="slide fade"><img src="images/presensi2.png" alt="Verifikasi wajah berhasil"></div>
-                            <div class="slide fade"><img src="images/presensi3.png" alt="Proses pengambilan foto absensi"></div>
+                            <div class="slide fade"><img src="images/presensi1.png" alt="Memuat Model"></div>
+                            <div class="slide fade"><img src="images/presensi2.png" alt="Verifikasi Titik Lokasi"></div>
+                            <div class="slide fade"><img src="images/presensi3.png" alt="Absen Masuk"></div>
+                            <div class="slide fade"><img src="images/presensi8.png" alt="Pop-up Absen Masuk"></div>
+                            <div class="slide fade"><img src="images/presensi4.png" alt="Absen Pulang"></div>
+                            <div class="slide fade"><img src="images/presensi9.png" alt="Pop-up Absen Pulang"></div>
+                            <div class="slide fade"><img src="images/presensi5.png" alt="Shift Tidak Tersedia"></div>
+                            <div class="slide fade"><img src="images/presensi6.png" alt="Diluar Jangkauan Kantor"></div>
+                            <div class="slide fade"><img src="images/presensi7.png" alt="Wajah Tidak Cocok"></div>
                             <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
                             <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
                         </div>
