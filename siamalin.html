@@ -9,56 +9,139 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-<style>
-.slideshow-container {
-    position: relative;
-    margin: auto;
-}
-.slide {
-    display: none;
-}
+    <style>
+        /* ===== MOBILE SLIDESHOW STYLES ===== */
+        .slideshow-container {
+            position: relative;
+            max-width: 375px;
+            margin: 0 auto 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.7);
+            aspect-ratio: 9/16;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
 
-.slide img, .gallery-item > img {
-    width: 100%;
-    vertical-align: middle;
-    border-radius: 5px;
-    border: 1px solid #eee;
-}
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
 
-.prev, .next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
-    background-color: rgba(0,0,0,0.3);
-}
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-.prev:hover, .next:hover {
-    background-color: rgba(0,0,0,0.8);
-}
-.fade {
-    animation-name: fade;
-    animation-duration: 0.5s;
-}
-@keyframes fade {
-    from {opacity: .4}
-    to {opacity: 1}
-}
-</style>
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: white;
+            border-radius: 5px;
+            display: block;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 45px;
+            height: 45px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+            user-select: none;
+            text-decoration: none;
+        }
+
+        .prev {
+            left: 15px;
+        }
+
+        .next {
+            right: 15px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.9);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
+
+        /* ===== GALLERY STYLES ===== */
+        .gallery-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .gallery-item p {
+            text-align: center;
+            margin-top: 18px;
+            font-weight: 600;
+            color: white;
+            font-size: 1.2em;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+        }
+
+        /* ===== SLIDE INDICATORS ===== */
+        .slide-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background-color: white;
+            transform: scale(1.3);
+            box-shadow: 0 0 10px rgba(255,255,255,0.8);
+        }
+
+        @media (min-width: 768px) {
+            .slideshow-container {
+                max-width: 375px;
+                margin: 0 auto 30px;
+            }
+        }
+    </style>
 </head>
-<script src="js/animasi.js"></script>
 <body>
+    <!-- Space background elements -->
+    <div class="space-bg">
+    </div>
 
     <div class="container project-detail">
         <header class="project-header">
@@ -99,7 +182,7 @@
                 </ul>
             </section>
 
-            <section class="animate-on-scroll delay-2">
+            <section>
                 <h2>Impact & Results</h2>
                 <div class="metrics-grid">
                     <div class="metric">
@@ -123,101 +206,136 @@
                     
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/login0.png" alt="Title"></div>
-                            <div class="slide fade"><img src="images/login.png" alt="Login page view"></div>
-                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
-                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
+                            <div class="slide">
+                                <img src="images/login0.png" alt="App Title Screen">
+                            </div>
+                            <div class="slide">
+                                <img src="images/login.png" alt="Login Page">
+                            </div>
+                            <a class="prev" href="#">❮</a>
+                            <a class="next" href="#">❯</a>
+                            <div class="slide-indicators"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                            </div>
                         </div>
-                        <p>Login Page</p>
+                        <p>Login Screens</p>
                     </div>
 
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/dashboard0.png" alt="Title"></div>
-                            <div class="slide fade"><img src="images/dashboard.jpg" alt="Dashboard Before Attendance"></div>
-                            <div class="slide fade"><img src="images/dashboard2.jpg" alt="Dashboard After Attendance"></div>
-                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
-                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
+                            <div class="slide fade active">
+                                <img src="images/dashboard0.png" alt="Dashboard Title">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/dashboard.jpg" alt="Dashboard Before Attendance">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/dashboard2.jpg" alt="Dashboard After Attendance">
+                            </div>
+                            <a class="prev" onclick="changeSlide(this, -1)">❮</a>
+                            <a class="next" onclick="changeSlide(this, 1)">❯</a>
+                            <div class="slide-indicators"></div>
                         </div>
                         <p>User Dashboard</p>
                     </div>
                     
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/presensi0.png" alt="Title"></div>
-                            <div class="slide fade"><img src="images/presensi1.png" alt="Loading Model"></div>
-                            <div class="slide fade"><img src="images/presensi2.png" alt="Verifying Location Point"></div>
-                            <div class="slide fade"><img src="images/presensi3.png" alt="Clock In"></div>
-                            <div class="slide fade"><img src="images/presensi8.png" alt="Clock In Pop-up"></div>
-                            <div class="slide fade"><img src="images/presensi4.png" alt="Clock Out"></div>
-                            <div class="slide fade"><img src="images/presensi9.png" alt="Clock Out Pop-up"></div>
-                            <div class="slide fade"><img src="images/presensi5.png" alt="Shift Not Available"></div>
-                            <div class="slide fade"><img src="images/presensi6.png" alt="Outside Office Range"></div>
-                            <div class="slide fade"><img src="images/presensi7.png" alt="Face Not Matched"></div>
-                            <div class="slide fade"><img src="images/presensi7.png" alt="Attendance history filter page"></div>
-                            <div class="slide fade"><img src="images/histori1.png" alt="List of Selected Month"></div>
-                            <div class="slide fade"><img src="images/histori2.png" alt="Monthly attendance history list view"></div>
-                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
-                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
+                            <div class="slide fade active">
+                                <img src="images/presensi0.png" alt="Attendance Title">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/presensi1.png" alt="Loading Model">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/presensi2.png" alt="Verifying Location">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/presensi3.png" alt="Clock In Screen">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/presensi8.png" alt="Clock In Pop-up">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/presensi4.png" alt="Clock Out Screen">
+                            </div>
+                            <a class="prev" onclick="changeSlide(this, -1)">❮</a>
+                            <a class="next" onclick="changeSlide(this, 1)">❯</a>
+                            <div class="slide-indicators"></div>
                         </div>
-                        <p>Face & Location-Based Attendance</p>
+                        <p>Attendance Process</p>
                     </div>
 
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/patroli0.png" alt="Title"></div>
-                            <div class="slide fade"><img src="images/patroli1.png" alt="Initializing Patrol"></div>
-                            <div class="slide fade"><img src="images/patroli2.png" alt="View Before Starting Patrol"></div>
-                            <div class="slide fade"><img src="images/patroli3.png" alt="View After Starting Patrol"></div>
-                            <div class="slide fade"><img src="images/patroli4.png" alt="Patrol Options View"></div>
-                            <div class="slide fade"><img src="images/patroli5.png" alt="View When Patrol is Paused"></div>
-                            <div class="slide fade"><img src="images/patroli12.png" alt="View After Pause Button is Pressed"></div>
-                            <div class="slide fade"><img src="images/patroli13.png" alt="View When Patrol is Resumed"></div>
-                            <div class="slide fade"><img src="images/patroli6.png" alt="Patrol Face Verification"></div>
-                            <div class="slide fade"><img src="images/patroli7.png" alt="Face Verification Successful"></div>
-                            <div class="slide fade"><img src="images/patroli8.png" alt="View After Successful Face Verification"></div>
-                            <div class="slide fade"><img src="images/patroli9.png" alt="Ending Patrol"></div>
-                            <div class="slide fade"><img src="images/patroli10.png" alt="Patrol History"></div>
-                            <div class="slide fade"><img src="images/patroli11.png" alt="Patrol Details"></div>
-                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
-                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
+                            <div class="slide fade active">
+                                <img src="images/patroli0.png" alt="Patrol Title">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/patroli1.png" alt="Initializing Patrol">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/patroli2.png" alt="Before Starting Patrol">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/patroli3.png" alt="After Starting Patrol">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/patroli6.png" alt="Face Verification">
+                            </div>
+                            <a class="prev" onclick="changeSlide(this, -1)">❮</a>
+                            <a class="next" onclick="changeSlide(this, 1)">❯</a>
+                            <div class="slide-indicators"></div>
                         </div>
-                        <p>Real-Time Patrol System</p>
+                        <p>Patrol Initiation</p>
                     </div>
 
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/laporan0.png" alt="Title"></div>
-                            <div class="slide fade"><img src="images/laporan1.png" alt="List of created reports"></div>
-                            <div class="slide fade"><img src="images/laporan2.png" alt="Report Details"></div>
-                            <div class="slide fade"><img src="images/laporan3.png" alt="Report details"></div>
-                            <div class="slide fade"><img src="images/laporan4.png" alt="Report details"></div>
-                            <div class="slide fade"><img src="images/laporan5.png" alt="Face Verification"></div>
-                            <div class="slide fade"><img src="images/laporan6.png" alt="Take Photo"></div>
-                            <div class="slide fade"><img src="images/laporan7.png" alt="Fill in Report Details"></div>
-                            <div class="slide fade"><img src="images/laporan7.png" alt="Report Sent"></div>
-                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
-                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
+                            <div class="slide fade active">
+                                <img src="images/laporan0.png" alt="Report Title">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/laporan1.png" alt="Report List">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/laporan2.png" alt="Report Details">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/laporan5.png" alt="Face Verification">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/laporan6.png" alt="Take Photo">
+                            </div>
+                            <a class="prev" onclick="changeSlide(this, -1)">❮</a>
+                            <a class="next" onclick="changeSlide(this, 1)">❯</a>
+                            <div class="slide-indicators"></div>
                         </div>
-                        <p>Incident & Activity Reporting</p>
+                        <p>Reporting System</p>
                     </div>
                     
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade"><img src="images/profil0.png" alt="Title"></div>
-                            <div class="slide fade"><img src="images/profil1.png" alt="Profile Page"></div>
-                            <div class="slide fade"><img src="images/profil2.png" alt="Edit Profile Page"></div>
-                            <a class="prev" onclick="changeSlide(this, -1)">&#10094;</a>
-                            <a class="next" onclick="changeSlide(this, 1)">&#10095;</a>
+                            <div class="slide fade active">
+                                <img src="images/profil0.png" alt="Profile Title">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/profil1.png" alt="Profile Page">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/profil2.png" alt="Edit Profile">
+                            </div>
+                            <a class="prev" onclick="changeSlide(this, -1)">❮</a>
+                            <a class="next" onclick="changeSlide(this, 1)">❯</a>
+                            <div class="slide-indicators"></div>
                         </div>
-                        <p>Officer Profile</p>
+                        <p>Profile Management</p>
                     </div>
-
                 </div>
             </section>
-        </main>
 
-            <section class="cta-section animate-on-scroll">
+            <section class="cta-section">
                 <h2>Interested in my project?</h2>
                 <p>I am open to collaboration opportunities or further discussion about similar projects.</p>
                 <div class="cta-buttons">
@@ -239,33 +357,60 @@
         </footer>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const slideshows = document.querySelectorAll('.slideshow-container');
-        slideshows.forEach(slideshow => {
-            slideshow.setAttribute('data-current-slide', '1');
-            showSlide(slideshow, 1);
+        // Fungsi untuk mengatur slideshow
+        function setupSlideshow(slideshow) {
+            const slides = slideshow.querySelectorAll('.slide');
+            const prev = slideshow.querySelector('.prev');
+            const next = slideshow.querySelector('.next');
+            const indicators = slideshow.querySelectorAll('.indicator');
+            let current = 0;
+            
+            function showSlide(index) {
+                // Sembunyikan semua slide
+                slides.forEach(slide => slide.style.display = 'none');
+                
+                // Nonaktifkan semua indikator
+                indicators.forEach(ind => ind.classList.remove('active'));
+                
+                // Tampilkan slide yang dipilih
+                slides[index].style.display = 'block';
+                indicators[index].classList.add('active');
+                current = index;
+            }
+            
+            // Tombol previous
+            prev.addEventListener('click', (e) => {
+                e.preventDefault();
+                let newIndex = current - 1;
+                if (newIndex < 0) newIndex = slides.length - 1;
+                showSlide(newIndex);
+            });
+            
+            // Tombol next
+            next.addEventListener('click', (e) => {
+                e.preventDefault();
+                let newIndex = current + 1;
+                if (newIndex >= slides.length) newIndex = 0;
+                showSlide(newIndex);
+            });
+            
+            // Klik indikator
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showSlide(index);
+                });
+            });
+            
+            // Mulai dengan slide pertama
+            showSlide(0);
+        }
+
+        // Inisialisasi semua slideshow saat dokumen siap
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.slideshow-container').forEach(setupSlideshow);
         });
-    });
-
-    function changeSlide(arrowButton, n) {
-        const slideshow = arrowButton.closest('.slideshow-container');
-        let slideIndex = parseInt(slideshow.getAttribute('data-current-slide'));
-        slideIndex += n;
-        showSlide(slideshow, slideIndex);
-    }
-
-    function showSlide(slideshow, n) {
-        const slides = slideshow.querySelectorAll('.slide');
-        if (n > slides.length) { n = 1; }
-        if (n < 1) { n = slides.length; }
-        
-        slides.forEach(slide => slide.style.display = "none");
-        slides[n - 1].style.display = "block";
-        slideshow.setAttribute('data-current-slide', n);
-    }
     </script>
     <script src="js/animasi.js"></script>
 </body>
