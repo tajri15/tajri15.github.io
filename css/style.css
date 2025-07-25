@@ -741,7 +741,7 @@ body.light-theme .back-button {
     animation-delay: calc(var(--i) * -3s);
 }
 
-.tech-icon {
+.orbit .tech-icon {
     position: absolute;
     left: 50%;
     top: -12px;
@@ -1245,10 +1245,21 @@ body.light-theme .back-button {
     }
 
     .tech-item {
+      /* Mengaktifkan layout flexbox */
       display: flex;
       flex-direction: column;
-      align-items: center;
-      padding: 15px 10px;
+
+      /* Kunci untuk perataan tengah sempurna */
+      align-items: center;    /* Tengah secara horizontal */
+      justify-content: center;  /* Tengah secara vertikal */
+
+      /* Beri ukuran kotak yang konsisten */
+      height: 110px; /* Anda bisa sesuaikan tingginya jika perlu */
+
+      /* Hapus padding atas & bawah yang manual, ganti dengan padding simpel */
+      padding: 10px;
+
+      /* Properti lainnya biarkan sama */
       background: rgba(52, 152, 219, 0.05);
       border-radius: 8px;
       transition: all 0.3s ease;
@@ -1263,10 +1274,9 @@ body.light-theme .back-button {
       box-shadow: 0 5px 15px rgba(52, 152, 219, 0.1);
     }
 
-    .tech-icon {
-      font-size: 2rem;
-      margin-bottom: 10px;
-      color: var(--primary-color);
+    .tech-item .tech-icon {
+      font-size: 1.8rem; /* Pastikan ukuran ikon tidak terlalu besar */
+      margin-bottom: 10px; /* Jarak ke teks di bawahnya */
     }
 
     .tech-name {
@@ -1277,12 +1287,7 @@ body.light-theme .back-button {
     }
 
     .tech-level {
-      width: 100%;
-      height: 4px;
-      background: rgba(52, 152, 219, 0.1);
-      border-radius: 2px;
-      margin-top: 10px;
-      overflow: hidden;
+      display: none;
     }
 
     .tech-level-bar {
