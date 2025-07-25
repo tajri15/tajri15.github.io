@@ -219,6 +219,55 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   };
 
+// 6. WELCOME POPUP ANIMATION (UPDATED VERSION)
+const welcomePopup = function() {
+  // Check session storage for active session
+  const currentSession = sessionStorage.getItem('activeSession');
+  const lastPopupTime = localStorage.getItem('lastPopupTime');
+  const now = new Date().getTime();
+  const oneDay = 24 * 60 * 60 * 1000; // 1 day in milliseconds
+  
+  // Show popup if:
+  // 1. No active session exists (new browser session), OR
+  // 2. It's been more than 1 day since last seeing the popup
+  if (!currentSession || (lastPopupTime && now - lastPopupTime > oneDay)) {
+    const popup = document.getElementById('welcomePopup');
+    const welcomeBtn = document.getElementById('welcomeBtn');
+    const textElements = document.querySelectorAll('.welcome-text p');
+    
+    // Mark session as active
+    sessionStorage.setItem('activeSession', 'true');
+    
+    // Activate popup
+    setTimeout(() => {
+      popup.classList.add('active');
+      
+      // Animate text sequentially
+      textElements.forEach((el, index) => {
+        const words = el.textContent.split(' ');
+        el.innerHTML = words.map(word => `<span>${word}</span>`).join(' ');
+        
+        const spans = el.querySelectorAll('span');
+        spans.forEach((span, i) => {
+          setTimeout(() => {
+            span.style.animation = `textReveal 0.5s ease-out ${i * 0.05}s forwards`;
+          }, index * 500);
+        });
+      });
+    }, 500);
+    
+    // Close button event
+    welcomeBtn.addEventListener('click', () => {
+      popup.classList.remove('active');
+      // Record when popup was last shown
+      localStorage.setItem('lastPopupTime', now.toString());
+    });
+  }
+};
+
+// Initialize welcome popup
+welcomePopup();
+
   // Initialize all animations
   createSpaceBackground();
   checkSavedTheme();
