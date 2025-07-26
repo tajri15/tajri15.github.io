@@ -136,6 +136,64 @@
                 margin: 0 auto 30px;
             }
         }
+
+        /* ===== Tombol Kembali Bertema Luar Angkasa (Versi Teks) ===== */
+        .space-back-button {
+        /* Mengatur layout ikon dan teks di dalamnya */
+        display: inline-flex; /* Membuatnya sejajar dan ukurannya pas */
+        align-items: center;
+        gap: 10px; /* Jarak antara ikon dan tulisan */
+
+        /* Mengatur ukuran dan bentuk */
+        padding: 12px 24px;
+        border-radius: 50px; /* Membuat sudut sangat melengkung (bentuk kapsul) */
+        
+        /* Styling tema luar angkasa */
+        background-color: rgba(44, 62, 80, 0.7);
+        color: white;
+        border: 2px solid var(--primary-color);
+        text-decoration: none;
+        font-size: 1rem; /* Ukuran font untuk tulisan */
+        font-weight: 600;
+        
+        /* Efek Cahaya (Glow) */
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.6), 
+                    inset 0 0 5px rgba(52, 152, 219, 0.4);
+        
+        /* Animasi & Transisi */
+        transition: all 0.3s ease-out;
+        animation: pulse-glow 3s infinite alternate;
+        }
+
+        .space-back-button i {
+            font-size: 1.2rem; /* Sedikit memperbesar ikon */
+        }
+
+        .space-back-button:hover {
+        transform: scale(1.05); /* Sedikit membesar saat di-hover */
+        box-shadow: 0 0 25px rgba(52, 152, 219, 1),
+                    inset 0 0 8px rgba(52, 152, 219, 0.7);
+        border-color: #6ac5ff;
+        animation-play-state: paused;
+        }
+
+        .space-back-button:active {
+        transform: scale(0.98); /* Efek ditekan */
+        }
+
+        /* Animasi untuk efek denyut cahaya (tetap sama) */
+        @keyframes pulse-glow {
+        from {
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.4), 
+                        inset 0 0 5px rgba(52, 152, 219, 0.2);
+            border-color: var(--primary-color);
+        }
+        to {
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.8),
+                        inset 0 0 8px rgba(52, 152, 219, 0.5);
+            border-color: #6ac5ff;
+        }
+        }
     </style>
 </head>
 <body>
@@ -145,8 +203,8 @@
 
     <div class="container project-detail">
         <header class="project-header">
-            <a href="index.html" class="back-button">
-                <i class="fas fa-arrow-left"></i>
+            <a href="index.html" class="space-back-button" title="Back to Portfolio">
+                <i class="fas fa-rocket"></i>
                 <span>Back to Portfolio</span>
             </a>
             <h1>Attendance & Security Patrol System (SiAmalin)</h1>
@@ -206,15 +264,15 @@
                     
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide">
+                            <div class="slide fade active">
                                 <img src="images/login0.png" alt="App Title Screen">
                             </div>
-                            <div class="slide">
+                            <div class="slide fade">
                                 <img src="images/login.png" alt="Login Page">
                             </div>
-                            <a class="prev" href="#">❮</a>
-                            <a class="next" href="#">❯</a>
-                            <div class="slide-indicators"></div>
+                            <a class="prev">❮</a>
+                            <a class="next">❯</a>
+                            <div class="slide-indicators">
                                 <div class="indicator"></div>
                                 <div class="indicator"></div>
                             </div>
@@ -233,9 +291,13 @@
                             <div class="slide fade">
                                 <img src="images/dashboard2.jpg" alt="Dashboard After Attendance">
                             </div>
-                            <a class="prev" onclick="changeSlide(this, -1)">❮</a>
-                            <a class="next" onclick="changeSlide(this, 1)">❯</a>
-                            <div class="slide-indicators"></div>
+                            <a class="prev">❮</a>
+                            <a class="next">❯</a>
+                            <div class="slide-indicators">
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                            </div>
                         </div>
                         <p>User Dashboard</p>
                     </div>
@@ -260,9 +322,16 @@
                             <div class="slide fade">
                                 <img src="images/presensi4.png" alt="Clock Out Screen">
                             </div>
-                            <a class="prev" onclick="changeSlide(this, -1)">❮</a>
-                            <a class="next" onclick="changeSlide(this, 1)">❯</a>
-                            <div class="slide-indicators"></div>
+                            <a class="prev">❮</a>
+                            <a class="next">❯</a>
+                            <div class="slide-indicators">
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                            </div>
                         </div>
                         <p>Attendance Process</p>
                     </div>
@@ -284,9 +353,15 @@
                             <div class="slide fade">
                                 <img src="images/patroli6.png" alt="Face Verification">
                             </div>
-                            <a class="prev" onclick="changeSlide(this, -1)">❮</a>
-                            <a class="next" onclick="changeSlide(this, 1)">❯</a>
-                            <div class="slide-indicators"></div>
+                            <a class="prev">❮</a>
+                            <a class="next">❯</a>
+                            <div class="slide-indicators">
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                            </div>
                         </div>
                         <p>Patrol Initiation</p>
                     </div>
@@ -308,9 +383,15 @@
                             <div class="slide fade">
                                 <img src="images/laporan6.png" alt="Take Photo">
                             </div>
-                            <a class="prev" onclick="changeSlide(this, -1)">❮</a>
-                            <a class="next" onclick="changeSlide(this, 1)">❯</a>
-                            <div class="slide-indicators"></div>
+                            <a class="prev">❮</a>
+                            <a class="next">❯</a>
+                            <div class="slide-indicators">
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                            </div>
                         </div>
                         <p>Reporting System</p>
                     </div>
@@ -326,9 +407,13 @@
                             <div class="slide fade">
                                 <img src="images/profil2.png" alt="Edit Profile">
                             </div>
-                            <a class="prev" onclick="changeSlide(this, -1)">❮</a>
-                            <a class="next" onclick="changeSlide(this, 1)">❯</a>
-                            <div class="slide-indicators"></div>
+                            <a class="prev">❮</a>
+                            <a class="next">❯</a>
+                            <div class="slide-indicators">
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                            </div>
                         </div>
                         <p>Profile Management</p>
                     </div>

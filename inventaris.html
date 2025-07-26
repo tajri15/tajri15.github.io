@@ -162,6 +162,64 @@
             object-fit: contain;
             display: block; 
         }
+
+        /* ===== Tombol Kembali Bertema Luar Angkasa (Versi Teks) ===== */
+        .space-back-button {
+        /* Mengatur layout ikon dan teks di dalamnya */
+        display: inline-flex; /* Membuatnya sejajar dan ukurannya pas */
+        align-items: center;
+        gap: 10px; /* Jarak antara ikon dan tulisan */
+
+        /* Mengatur ukuran dan bentuk */
+        padding: 12px 24px;
+        border-radius: 50px; /* Membuat sudut sangat melengkung (bentuk kapsul) */
+        
+        /* Styling tema luar angkasa */
+        background-color: rgba(44, 62, 80, 0.7);
+        color: white;
+        border: 2px solid var(--primary-color);
+        text-decoration: none;
+        font-size: 1rem; /* Ukuran font untuk tulisan */
+        font-weight: 600;
+        
+        /* Efek Cahaya (Glow) */
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.6), 
+                    inset 0 0 5px rgba(52, 152, 219, 0.4);
+        
+        /* Animasi & Transisi */
+        transition: all 0.3s ease-out;
+        animation: pulse-glow 3s infinite alternate;
+        }
+
+        .space-back-button i {
+            font-size: 1.2rem; /* Sedikit memperbesar ikon */
+        }
+
+        .space-back-button:hover {
+        transform: scale(1.05); /* Sedikit membesar saat di-hover */
+        box-shadow: 0 0 25px rgba(52, 152, 219, 1),
+                    inset 0 0 8px rgba(52, 152, 219, 0.7);
+        border-color: #6ac5ff;
+        animation-play-state: paused;
+        }
+
+        .space-back-button:active {
+        transform: scale(0.98); /* Efek ditekan */
+        }
+
+        /* Animasi untuk efek denyut cahaya (tetap sama) */
+        @keyframes pulse-glow {
+        from {
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.4), 
+                        inset 0 0 5px rgba(52, 152, 219, 0.2);
+            border-color: var(--primary-color);
+        }
+        to {
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.8),
+                        inset 0 0 8px rgba(52, 152, 219, 0.5);
+            border-color: #6ac5ff;
+        }
+        }
     </style>
 </head>
 <body>
@@ -170,8 +228,8 @@
 
     <div class="container project-detail">
         <header class="project-header">
-            <a href="index.html" class="back-button">
-                <i class="fas fa-arrow-left"></i>
+            <a href="index.html" class="space-back-button" title="Back to Portfolio">
+                <i class="fas fa-rocket"></i>
                 <span>Back to Portfolio</span>
             </a>
             <h1>Inventory Management System for PT Telkom</h1>
@@ -242,18 +300,51 @@
                     
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide">
-                                <img src="images/staf0.png" alt="Staff Login Page">
+                            <div class="slide fade active">
+                                <img src="images/staf0.png" alt="Title">
                             </div>
-                            <div class="slide">
-                                <img src="images/staf1.jpeg" alt="Staff Dashboard">
+                            <div class="slide fade">
+                                <img src="images/staf1.jpeg" alt="Register">
                             </div>
-                            <div class="slide">
-                                <img src="images/staf2.jpeg" alt="Staff Inventory View">
+                            <div class="slide fade">
+                                <img src="images/staf2.jpeg" alt="Login">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/staf3.jpeg" alt="Dashboard">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/staf4.jpeg" alt="Dashboard Sidebar">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/staf5.jpeg" alt="Items Sidebar">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/staf6.jpeg" alt="Items Inventory">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/staf7.jpeg" alt="Incoming Items Sidebar">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/staf9.jpeg" alt="Incoming Items">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/staf9.jpeg" alt="Outgoing Items Sidebar">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/staf10.jpeg" alt="Outgoing Items">
                             </div>
                             <a class="prev" href="#">❮</a>
                             <a class="next" href="#">❯</a>
-                            <div class="slide-indicators"></div>
+                            <div class="slide-indicators">
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
                                 <div class="indicator"></div>
                                 <div class="indicator"></div>
                             </div>
@@ -263,45 +354,88 @@
 
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide">
-                                <img src="images/admin0.png" alt="Admin Dashboard">
+                            <div class="slide fade active">
+                                <img src="images/admin0.png" alt="Title">
                             </div>
                             <div class="slide fade">
-                                <img src="images/admin1.jpeg" alt="Admin Item Management">
+                                <img src="images/admin1.jpeg" alt="Register">
                             </div>
                             <div class="slide fade">
-                                <img src="images/admin2.jpeg" alt="Admin Reports">
+                                <img src="images/admin2.jpeg" alt="Login">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin3.jpeg" alt="Dashboard">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin4.jpeg" alt="Dashboard Sidebar">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin5.jpeg" alt="Inventory Items Sidebar">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin6.jpeg" alt="Inventory Items">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin7.jpeg" alt="Add Items">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin8.jpeg" alt="Categories Sidebar">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin9.jpeg" alt="Categories">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin10.jpeg" alt="Add Categories">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin11.jpeg" alt="Incoming Items Sidebar">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin12.jpeg" alt="Incoming Items">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin13.jpeg" alt="Add Incoming Items">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin14.jpeg" alt="Outgoing Items Sidebar">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin15.jpeg" alt="Outgoing Items">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin16.jpeg" alt="Add Outgoing Items">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin17.jpeg" alt="Log Activity Sidebar">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/admin18.jpeg" alt="Log Activity">
                             </div>
                             <a class="prev" href="#">❮</a>
                             <a class="next" href="#">❯</a>
-                            <div class="slide-indicators"></div>
+                            <div class="slide-indicators">
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
                                 <div class="indicator"></div>
                                 <div class="indicator"></div>
                             </div>
                         </div>
-                        <p>Admin Interface</p>
-                    </div>
-                    
-                    <div class="gallery-item">
-                        <div class="slideshow-container">
-                            <div class="slide">
-                                <img src="images/manager0.png" alt="Manager Dashboard">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/manager2.jpeg" alt="Manager Analytics">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/manager3.png" alt="Manager Reports">
-                            </div>
-                            <a class="prev" href="#">❮</a>
-                            <a class="next" href="#">❯</a>
-                            <div class="slide-indicators"></div>
-                                <div class="indicator"></div>
-                                <div class="indicator"></div>
-                                <div class="indicator"></div>
-                            </div>
-                        </div>
-                        <p>Manager Interface</p>
+                        <p>Admin & Manager Interface</p>
                     </div>
                 </div>
             </section>

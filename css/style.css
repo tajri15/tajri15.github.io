@@ -1324,3 +1324,93 @@ body.light-theme .back-button {
     }
 }
 
+@media (max-width: 768px) {
+
+  /* Aturan Global untuk Box Sizing */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* 1. Penyesuaian Umum */
+  .container {
+    margin: 20px;
+    padding: 20px;
+  }
+  h2 {
+    font-size: 1.8em;
+  }
+
+  /* 2. Perbaikan Header */
+  .hero-content {
+    flex-direction: column;
+    text-align: center; 
+  }
+  .hero-text {
+    text-align: center;
+  }
+  h1.typing-animation {
+    font-size: 2.2em; 
+    white-space: normal;
+    border-right: none; 
+    animation: none;  
+  }
+  .profile-animation {
+    margin-bottom: 20px;
+  }
+
+  /* 3. Perbaikan Grid Statistik */
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* 4. Perbaikan Kartu Proyek */
+  .project-card {
+    flex-direction: column;
+  }
+  .project-preview, .project-details {
+    width: 100%;
+    min-width: unset;
+  }
+  .project-preview {
+    height: 250px;
+  }
+  .project-details {
+    padding: 20px;
+    overflow-wrap: break-word;
+  }
+  .project-details p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  .project-details .tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .project-details .btn {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* 5. Perbaikan Skills & Proses */
+  .skills-container, .process-timeline {
+    flex-direction: column;
+  }
+  .process-step:not(:last-child)::after {
+    display: none;
+  }
+  .process-step {
+    margin-bottom: 20px;
+  }
+
+  /* 6. Perbaikan Kartu Kontak */
+  .contact-methods {
+    grid-template-columns: 1fr;
+  }
+  .contact-card .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+}
