@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskTrack Pro Project - Tajri's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .slideshow-container { position: relative; max-width: 800px; margin: auto; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.7); aspect-ratio: 16/9; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); }
+        .slide { display: none; width: 100%; height: 100%; animation-name: fade; animation-duration: 0.6s; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; background: white; }
+        .prev, .next { cursor: pointer; position: absolute; top: 50%; width: 45px; height: 45px; margin-top: -22px; color: white; font-weight: bold; font-size: 22px; transition: all 0.3s ease; border-radius: 50%; background-color: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 100; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); }
+        .prev { left: 15px; }
+        .next { right: 15px; }
+        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.9); transform: scale(1.1); }
+        @keyframes fade { from {opacity: .4} to {opacity: 1} }
+    </style>
+</head>
+<body>
+
+    <div class="container project-detail">
+        <header class="project-header">
+            <a href="index.html" class="space-back-button" title="Back to Portfolio">
+                <i class="fas fa-rocket"></i>
+                <span>Back to Portfolio</span>
+            </a>
+            <h1>TaskTrack Pro - Task Management App</h1>
+        </header>
+
+        <main>
+            <section class="animate-on-scroll">
+                <h2>Project Summary</h2>
+                <p>
+                    TaskTrack Pro is a full-stack task management application built from scratch. It features a modern and responsive frontend using React and Tailwind CSS, powered by a robust backend with Node.js and Express. The application includes a complete, secure local authentication system (registration, login, logout, and password management) using Passport.js and session management with a PostgreSQL database.
+                </p>
+            </section>
+
+            <section class="animate-on-scroll delay-1">
+                <h2>Technologies Used</h2>
+                <ul class="tech-list">
+                    <li><strong>Frontend:</strong> React 18, TypeScript, Vite, Tailwind CSS, Shadcn/UI, TanStack Query</li>
+                    <li><strong>Backend:</strong> Node.js, Express.js, TypeScript, TSX</li>
+                    <li><strong>Database:</strong> PostgreSQL, Drizzle ORM</li>
+                    <li><strong>Authentication:</strong> Passport.js (Local Strategy), Express-session, Bcrypt.js</li>
+                </ul>
+            </section>
+            
+            <section class="animate-on-scroll delay-2">
+                <h2>Challenge & Solution</h2>
+                <div class="challenge-box">
+                    <h3>Challenge</h3>
+                    <p>Building a secure, stateful, full-stack application from the ground up, including a custom authentication system without relying on third-party providers, and ensuring a seamless, real-time user experience.</p>
+                    
+                    <h3>Solution</h3>
+                    <p>Implemented a classic session-based authentication flow with password hashing. Utilized TanStack Query on the frontend for efficient server state management, providing optimistic updates and a smooth user experience. The entire application is strongly typed with TypeScript to ensure code quality and maintainability across the stack.</p>
+                </div>
+            </section>
+
+            <section class="animate-on-scroll delay-1">
+                <h2>Main Features</h2>
+                <ul>
+                    <li><strong>User Authentication:</strong> Complete, secure registration and login system with password hashing.</li>
+                    <li><strong>Profile Management:</strong> Users can view their profile and update their name and password.</li>
+                    <li><strong>Full CRUD for Tasks:</strong> Create, read, update, and delete tasks with properties like priority and due dates.</li>
+                    <li><strong>Interactive UI:</strong> Real-time filtering, sorting, and searching of tasks directly on the frontend.</li>
+                    <li><strong>Dark Mode:</strong> A fully implemented dark mode toggle for user comfort.</li>
+                    <li><strong>Dashboard Widgets:</strong> Includes cards for statistics, recent activities, and upcoming schedules.</li>
+                </ul>
+            </section>
+
+            <section id="gallery">
+                <h2>Screenshot Gallery</h2>
+                <div class="slideshow-container">
+                    <div class="slide"><img src="images/tasktrack-dashboard-light.png" alt="Dashboard Light Mode"></div>
+                    <div class="slide"><img src="images/tasktrack-dashboard-dark.png" alt="Dashboard Dark Mode"></div>
+                    <div class="slide"><img src="images/tasktrack-login.png" alt="Login Page"></div>
+                    <div class="slide"><img src="images/tasktrack-profile.png" alt="Profile Page"></div>
+                    
+                    <a class="prev" onclick="changeSlide(this, -1)">❮</a>
+                    <a class="next" onclick="changeSlide(this, 1)">❯</a>
+                </div>
+            </section>
+
+            <section class="cta-section animate-on-scroll">
+                <h2>Launch The Application</h2>
+                <p>This project is deployed and fully functional. Click the button below to try it out yourself!</p>
+                <div class="cta-buttons">
+                    <a href="https://your-tasktrack-app-url.com" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Launch TaskTrack Pro
+                    </a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p class="copyright">&copy; 2025 - Created by Tajri Ramal Muzi</p>
+        </footer>
+    </div>
+
+    <script src="js/animasi.js"></script>
+    <script>
+    // Skrip khusus untuk slideshow di halaman ini
+    document.addEventListener('DOMContentLoaded', function() {
+        const slideshows = document.querySelectorAll('.slideshow-container');
+        slideshows.forEach(container => {
+            container.slideIndex = 1;
+            showSlides(container, 1);
+        });
+    });
+
+    function changeSlide(button, n) {
+        const slideshowContainer = button.closest('.slideshow-container');
+        slideshowContainer.slideIndex += n;
+        showSlides(slideshowContainer, slideshowContainer.slideIndex);
+    }
+
+    function showSlides(container, n) {
+        let i;
+        const slides = container.getElementsByClassName("slide");
+        if (n > slides.length) { container.slideIndex = 1 }
+        if (n < 1) { container.slideIndex = slides.length }
+        
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        
+        slides[container.slideIndex - 1].style.display = "block";
+    }
+    </script>
+</body>
+</html>
