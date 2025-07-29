@@ -10,14 +10,216 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .slideshow-container { position: relative; max-width: 800px; margin: auto; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.7); aspect-ratio: 16/9; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); }
-        .slide { display: none; width: 100%; height: 100%; animation-name: fade; animation-duration: 0.6s; }
-        .slide img { width: 100%; height: 100%; object-fit: cover; background: white; }
-        .prev, .next { cursor: pointer; position: absolute; top: 50%; width: 45px; height: 45px; margin-top: -22px; color: white; font-weight: bold; font-size: 22px; transition: all 0.3s ease; border-radius: 50%; background-color: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 100; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); }
-        .prev { left: 15px; }
-        .next { right: 15px; }
-        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.9); transform: scale(1.1); }
-        @keyframes fade { from {opacity: .4} to {opacity: 1} }
+        /* ===== DESKTOP SLIDESHOW STYLES ===== */
+        .slideshow-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto 25px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.7);
+            aspect-ratio: 16/9;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            background: white;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: 45px;
+            height: 45px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 22px;
+            transition: all 0.3s ease;
+            border-radius: 50%;
+            background-color: rgba(0,0,0,0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        .prev {
+            left: 15px;
+        }
+
+        .next {
+            right: 15px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0,0,0,0.9);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255,255,255,0.3);
+        }
+
+        /* ===== GALLERY STYLES ===== */
+        .gallery-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+            border: 1px solid rgba(255,255,255,0.15);
+            transition: all 0.4s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .gallery-item p {
+            text-align: center;
+            margin-top: 18px;
+            font-weight: 600;
+            color: white;
+            font-size: 1.2em;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+        }
+
+        /* ===== SLIDE INDICATORS ===== */
+        .slide-indicators {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: rgba(255,255,255,0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .indicator.active {
+            background-color: white;
+            transform: scale(1.3);
+            box-shadow: 0 0 10px rgba(255,255,255,0.8);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        .fade {
+            animation-name: fade;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes fade {
+            from {opacity: .4}
+            to {opacity: 1}
+        }
+
+        @media (max-width: 768px) {
+            .slideshow-container {
+                max-width: 100%;
+                aspect-ratio: 4/3;
+            }
+        }
+
+        .slide {
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: white;
+        }
+
+        .slide.active {
+            display: block;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block; 
+        }
+
+        /* ===== Tombol Kembali Bertema Luar Angkasa (Versi Teks) ===== */
+        .space-back-button {
+        /* Mengatur layout ikon dan teks di dalamnya */
+        display: inline-flex; /* Membuatnya sejajar dan ukurannya pas */
+        align-items: center;
+        gap: 10px; /* Jarak antara ikon dan tulisan */
+
+        /* Mengatur ukuran dan bentuk */
+        padding: 12px 24px;
+        border-radius: 50px; /* Membuat sudut sangat melengkung (bentuk kapsul) */
+        
+        /* Styling tema luar angkasa */
+        background-color: rgba(44, 62, 80, 0.7);
+        color: white;
+        border: 2px solid var(--primary-color);
+        text-decoration: none;
+        font-size: 1rem; /* Ukuran font untuk tulisan */
+        font-weight: 600;
+        
+        /* Efek Cahaya (Glow) */
+        box-shadow: 0 0 15px rgba(52, 152, 219, 0.6), 
+                    inset 0 0 5px rgba(52, 152, 219, 0.4);
+        
+        /* Animasi & Transisi */
+        transition: all 0.3s ease-out;
+        animation: pulse-glow 3s infinite alternate;
+        }
+
+        .space-back-button i {
+            font-size: 1.2rem; /* Sedikit memperbesar ikon */
+        }
+
+        .space-back-button:hover {
+        transform: scale(1.05); /* Sedikit membesar saat di-hover */
+        box-shadow: 0 0 25px rgba(52, 152, 219, 1),
+                    inset 0 0 8px rgba(52, 152, 219, 0.7);
+        border-color: #6ac5ff;
+        animation-play-state: paused;
+        }
+
+        .space-back-button:active {
+        transform: scale(0.98); /* Efek ditekan */
+        }
+
+        /* Animasi untuk efek denyut cahaya (tetap sama) */
+        @keyframes pulse-glow {
+        from {
+            box-shadow: 0 0 10px rgba(52, 152, 219, 0.4), 
+                        inset 0 0 5px rgba(52, 152, 219, 0.2);
+            border-color: var(--primary-color);
+        }
+        to {
+            box-shadow: 0 0 20px rgba(52, 152, 219, 0.8),
+                        inset 0 0 8px rgba(52, 152, 219, 0.5);
+            border-color: #6ac5ff;
+        }
+        }
     </style>
 </head>
 <body>
@@ -72,64 +274,135 @@
                 </ul>
             </section>
 
+            <section class="animate-on-scroll delay-2">
+                <h2>Impact & Results</h2>
+                <div class="metrics-grid">
+                    <div class="metric">
+                        <div class="metric-value">90%</div>
+                        <div class="metric-label">Task Completion Rate</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">40%</div>
+                        <div class="metric-label">Increase in Productivity</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">100+</div>
+                        <div class="metric-label">Active Users</div>
+                    </div>
+                </div>
+            </section>
+
             <section id="gallery">
                 <h2>Screenshot Gallery</h2>
-                <div class="slideshow-container">
-                    <div class="slide"><img src="images/tasktrack-dashboard-light.png" alt="Dashboard Light Mode"></div>
-                    <div class="slide"><img src="images/tasktrack-dashboard-dark.png" alt="Dashboard Dark Mode"></div>
-                    <div class="slide"><img src="images/tasktrack-login.png" alt="Login Page"></div>
-                    <div class="slide"><img src="images/tasktrack-profile.png" alt="Profile Page"></div>
-                    
-                    <a class="prev" onclick="changeSlide(this, -1)">❮</a>
-                    <a class="next" onclick="changeSlide(this, 1)">❯</a>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="slideshow-container">
+                            <div class="slide fade active">
+                                <img src="images/tasktrack-dashboard-light.png" alt="Dashboard Light Mode">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/tasktrack-dashboard-dark.png" alt="Dashboard Dark Mode">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/tasktrack-login.png" alt="Login Page">
+                            </div>
+                            <div class="slide fade">
+                                <img src="images/tasktrack-profile.png" alt="Profile Page">
+                            </div>
+                            <a class="prev" href="#">❮</a>
+                            <a class="next" href="#">❯</a>
+                            <div class="slide-indicators">
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                                <div class="indicator"></div>
+                            </div>
+                        </div>
+                        <p>TaskTrack Pro Interface</p>
+                    </div>
                 </div>
             </section>
 
             <section class="cta-section animate-on-scroll">
-                <h2>Launch The Application</h2>
-                <p>This project is deployed and fully functional. Click the button below to try it out yourself!</p>
+                <h2>Interested in my project?</h2>
+                <p>I am open to collaboration opportunities or further discussion about similar projects.</p>
                 <div class="cta-buttons">
-                    <a href="https://your-tasktrack-app-url.com" target="_blank" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i> Launch TaskTrack Pro
+                    <a href="https://wa.me/6282284720393" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Contact Me
                     </a>
+                    <a href="https://github.com/tajri15/TaskTrackManager-App.git" class="btn btn-github" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="index.html" class="btn btn-secondary">See Other Projects</a>
                 </div>
             </section>
         </main>
 
         <footer>
+            <div class="social-links">
+                <a href="https://github.com/tajri15" target="_blank"><i class="fab fa-github"></i> GitHub</a> &bull;
+                <a href="https://linkedin.com/in/tajriramalmuzi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &bull;
+                <a href="mailto:ramalmuzitajri@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            </div>
             <p class="copyright">&copy; 2025 - Created by Tajri Ramal Muzi</p>
         </footer>
     </div>
 
-    <script src="js/animasi.js"></script>
     <script>
-    // Skrip khusus untuk slideshow di halaman ini
-    document.addEventListener('DOMContentLoaded', function() {
-        const slideshows = document.querySelectorAll('.slideshow-container');
-        slideshows.forEach(container => {
-            container.slideIndex = 1;
-            showSlides(container, 1);
-        });
-    });
-
-    function changeSlide(button, n) {
-        const slideshowContainer = button.closest('.slideshow-container');
-        slideshowContainer.slideIndex += n;
-        showSlides(slideshowContainer, slideshowContainer.slideIndex);
-    }
-
-    function showSlides(container, n) {
-        let i;
-        const slides = container.getElementsByClassName("slide");
-        if (n > slides.length) { container.slideIndex = 1 }
-        if (n < 1) { container.slideIndex = slides.length }
-        
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+        // Fungsi untuk mengatur slideshow
+        function setupSlideshow(slideshow) {
+            const slides = slideshow.querySelectorAll('.slide');
+            const prev = slideshow.querySelector('.prev');
+            const next = slideshow.querySelector('.next');
+            const indicators = slideshow.querySelectorAll('.indicator');
+            let current = 0;
+            
+            function showSlide(index) {
+                // Sembunyikan semua slide
+                slides.forEach(slide => slide.style.display = 'none');
+                
+                // Nonaktifkan semua indikator
+                indicators.forEach(ind => ind.classList.remove('active'));
+                
+                // Tampilkan slide yang dipilih
+                slides[index].style.display = 'block';
+                indicators[index].classList.add('active');
+                current = index;
+            }
+            
+            // Tombol previous
+            prev.addEventListener('click', (e) => {
+                e.preventDefault();
+                let newIndex = current - 1;
+                if (newIndex < 0) newIndex = slides.length - 1;
+                showSlide(newIndex);
+            });
+            
+            // Tombol next
+            next.addEventListener('click', (e) => {
+                e.preventDefault();
+                let newIndex = current + 1;
+                if (newIndex >= slides.length) newIndex = 0;
+                showSlide(newIndex);
+            });
+            
+            // Klik indikator
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showSlide(index);
+                });
+            });
+            
+            // Mulai dengan slide pertama
+            showSlide(0);
         }
-        
-        slides[container.slideIndex - 1].style.display = "block";
-    }
+
+        // Inisialisasi semua slideshow saat dokumen siap
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.slideshow-container').forEach(setupSlideshow);
+        });
     </script>
+    <script src="js/animasi.js"></script>
 </body>
 </html>

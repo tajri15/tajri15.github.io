@@ -1414,3 +1414,94 @@ body.light-theme .back-button {
   }
 
 }
+
+.combined-cta {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 0;
+}
+
+.cta-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.cta-box {
+    flex: 1;
+    padding: 30px;
+    min-width: 300px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cta-divider {
+    width: 1px;
+    background: #eee;
+    margin: 20px 0;
+}
+
+.cta-buttons {
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-align: center;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background: #0066cc;
+    color: white;
+}
+
+.btn-secondary {
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+@media (max-width: 768px) {
+    .cta-container {
+        flex-direction: column;
+    }
+    .cta-divider {
+        width: 100%;
+        height: 1px;
+        margin: 0;
+    }
+    .cta-box {
+        width: 100%;
+    }
+}
+
+.btn-github {
+    background-color: #333;
+    color: white;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-github:hover {
+    background-color: #24292e;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Add this to your existing button styles */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
