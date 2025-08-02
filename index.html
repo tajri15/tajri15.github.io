@@ -49,11 +49,11 @@
                     
                     <div class="stats-grid">
                         <div class="stat-item">
-                            <div class="stat-number" data-count="4">0</div>
+                            <div class="stat-number" data-count="5">0</div>
                             <div class="stat-label">Projects</div>
                         </div>
                         <div class="stat-item">
-                            <div class="stat-number" data-count="22">0</div>
+                            <div class="stat-number" data-count="25">0</div>
                             <div class="stat-label">Technologies</div>
                         </div>
                         <div class="stat-item">
@@ -67,7 +67,7 @@
     </header>
 
     <main>
-<section id="skills" class="animated-section">
+        <section id="skills" class="animated-section">
             <h2><i class="fas fa-code section-icon"></i> Technical Skills</h2>
             
             <div class="skills-container">
@@ -104,6 +104,11 @@
                             <span class="tech-name">Vite</span>
                             <div class="tech-level"><div class="tech-level-bar" style="width: 75%"></div></div>
                         </div>
+                        <div class="tech-item" data-tech="axios" data-level="65">
+                            <i class="fas fa-paper-plane tech-icon"></i>
+                            <span class="tech-name">Axios</span>
+                            <div class="tech-level"><div class="tech-level-bar" style="width: 85%"></div></div>
+                        </div>
                         <div class="tech-item" data-tech="tailwind" data-level="65">
                             <i class="fas fa-wind tech-icon"></i>
                             <span class="tech-name">Tailwind CSS</span>
@@ -139,6 +144,11 @@
                             <i class="fab fa-laravel tech-icon"></i>
                             <span class="tech-name">Laravel</span>
                             <div class="tech-level"><div class="tech-level-bar" style="width: 80%"></div></div>
+                        </div>
+                        <div class="tech-item" data-tech="sanctum" data-level="65">
+                            <i class="fas fa-shield-alt tech-icon"></i>
+                            <span class="tech-name">Sanctum</span>
+                            <div class="tech-level"><div class="tech-level-bar" style="width: 75%"></div></div>
                         </div>
                         <div class="tech-item" data-tech="codeigniter" data-level="65">
                             <i class="fas fa-fire tech-icon"></i>
@@ -202,6 +212,11 @@
                             <span class="tech-name">Docker</span>
                             <div class="tech-level"><div class="tech-level-bar" style="width: 60%"></div></div>
                         </div>
+                        <div class="tech-item" data-tech="postman" data-level="65">
+                            <i class="fas fa-rocket tech-icon"></i>
+                            <span class="tech-name">Postman</span>
+                            <div class="tech-level"><div class="tech-level-bar" style="width: 85%"></div></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -209,7 +224,6 @@
 
         <section id="projects" class="animated-section">
             <h2><i class="fas fa-project-diagram section-icon"></i> Featured Projects</h2>
-            
             <div class="project-card">
                 <div class="project-preview">
                     <div class="mockup-container">
@@ -367,12 +381,55 @@
                         <span>WebSockets</span>
                         <span>Docker</span>
                     </div>
-                        <a href="campus-hub.html" class="btn btn-primary">
-                            <i class="fas fa-external-link-alt"></i> View Project Details
-                        </a>
+                    <a href="campus-hub.html" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> View Project Details
+                    </a>
                 </div>
             </div>
-            </section>
+
+            <div class="project-card">
+                <div class="project-preview">
+                    <div class="mockup-container">
+                        <div class="mockup-frame">
+                            <img src="images/dapurpintar.png" alt="DapurPintar Application">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>DapurPintar - Smart Recipe & Pantry App</h3>
+                    <p>
+                        A full-stack web application that intelligently suggests recipes based on ingredients available in a user's virtual pantry. Features a secure, token-based authentication system, a complete CRUD interface for pantry management, and a smart algorithm that fetches and filters recipes from an external API.
+                    </p>
+                    <div class="project-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Full-Stack Laravel + React Architecture</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Secure API with Laravel Sanctum</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Smart recipe-matching algorithm</span>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span>Laravel</span>
+                        <span>React</span>
+                        <span>Vite</span>
+                        <span>Axios</span>
+                        <span>Sanctum</span>
+                        <span>SQLite</span>
+                        <span>Postman</span>
+                    </div>
+                    <!-- Buat file baru bernama dapurpintar.html untuk detailnya -->
+                    <a href="dapurpintar.html" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> View Project Details
+                    </a>
+                </div>
+            </div>
+        </section>
 
         <section id="workflow" class="animated-section">
             <h2><i class="fas fa-cogs section-icon"></i> My Development Process</h2>

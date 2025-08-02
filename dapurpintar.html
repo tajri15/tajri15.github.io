@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CampusHub Project - Tajri's Portfolio</title>
+    <title>DapurPintar Project - Tajri's Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -184,7 +184,7 @@
         
         /* Efek Cahaya (Glow) */
         box-shadow: 0 0 15px rgba(52, 152, 219, 0.6), 
-                    inset 0 0 5px rgba(52, 152, 219, 0.4);
+                      inset 0 0 5px rgba(52, 152, 219, 0.4);
         
         /* Animasi & Transisi */
         transition: all 0.3s ease-out;
@@ -198,7 +198,7 @@
         .space-back-button:hover {
         transform: scale(1.05); /* Sedikit membesar saat di-hover */
         box-shadow: 0 0 25px rgba(52, 152, 219, 1),
-                    inset 0 0 8px rgba(52, 152, 219, 0.7);
+                      inset 0 0 8px rgba(52, 152, 219, 0.7);
         border-color: #6ac5ff;
         animation-play-state: paused;
         }
@@ -230,24 +230,25 @@
                 <i class="fas fa-rocket"></i>
                 <span>Back to Portfolio</span>
             </a>
-            <h1>CampusHub - Event Management System</h1>
+            <h1>DapurPintar - Smart Recipe & Pantry App</h1>
         </header>
 
         <main>
             <section class="animate-on-scroll">
                 <h2>Project Summary</h2>
                 <p>
-                    CampusHub is a full-stack, real-time campus event management platform built with a microservices-style architecture. The project demonstrates the integration of two distinct technology stacks: a robust backend API powered by Java (Spring Boot) and a dynamic frontend user interface built with PHP (CodeIgniter). The entire application, including the MySQL database, is fully containerized with Docker and orchestrated with Docker Compose, ensuring a consistent and easily replicable development and deployment environment.
+                    DapurPintar is a full-stack web application built from the ground up to solve the common problem of "what to cook with the ingredients I have?". It features a secure, multi-user environment where each user manages their own virtual pantry. The application's core is a smart algorithm that connects to an external recipe API, fetches recipe details, and intelligently filters them to only show dishes that can be fully prepared with the user's available ingredients.
                 </p>
             </section>
 
             <section class="animate-on-scroll delay-1">
                 <h2>Technologies Used</h2>
                 <ul class="tech-list">
-                    <li><strong>Backend:</strong> Java, Spring Boot, Spring Web, Spring Data JPA, WebSockets</li>
-                    <li><strong>Frontend:</strong> PHP, CodeIgniter 4, Bootstrap 5</li>
-                    <li><strong>Database:</strong> MySQL</li>
-                    <li><strong>Deployment:</strong> Docker, Docker Compose</li>
+                    <li><strong>Frontend:</strong> React 18, Vite, React Router, Axios</li>
+                    <li><strong>Backend:</strong> Laravel 10, PHP 8</li>
+                    <li><strong>Database:</strong> SQLite</li>
+                    <li><strong>API Authentication:</strong> Laravel Sanctum (Token-based)</li>
+                    <li><strong>Tools:</strong> Postman (API Testing)</li>
                 </ul>
             </section>
             
@@ -255,23 +256,21 @@
                 <h2>Challenge & Solution</h2>
                 <div class="challenge-box">
                     <h3>Challenge</h3>
-                    <p>Integrating two different programming languages and frameworks (Java & PHP) into a cohesive application, and managing the multi-service environment for both development and deployment.</p>
+                    <p>The main challenge was to design and implement a robust algorithm capable of comparing a user's ingredient list against the requirements of thousands of potential recipes from an external API, all in real-time. Additionally, building a secure, multi-user authentication system to ensure each user's data remains private was a key requirement.</p>
                     
                     <h3>Solution</h3>
-                    <p>Designed a microservices-style architecture where the frontend communicates with the backend via a REST API. Utilized Docker Compose to define, manage, and link all services (frontend, backend, database), which simplified the complex setup into a single command, ensuring environmental consistency and easy onboarding for developers.</p>
+                    <p>A secure, token-based authentication system was built using Laravel Sanctum, protecting all user-specific API endpoints. For the core logic, a multi-step algorithm was developed in the Laravel backend: it first fetches a broad list of potential recipes based on a primary ingredient, then iterates through each one to fetch its full ingredient list, and finally performs a server-side comparison to validate if all required items are present in the user's pantry before returning the results to the React frontend.</p>
                 </div>
             </section>
 
             <section class="animate-on-scroll delay-1">
                 <h2>Main Features</h2>
                 <ul>
-                    <li><strong>Admin CRUD:</strong> Full functionality for admin users to Create, Read, Update, and Delete event data.</li>
-                    <li><strong>User Authentication & Roles:</strong> A complete manual authentication system (Register, Login, Logout) with Role-Based Access Control distinguishing between 'Admin' and 'User' privileges.</li>
-                    <li><strong>Event Registration:</strong> Authenticated users can register for events, with the backend validating for available quota and duplicate registrations.</li>
-                    <li><strong>View Registrants:</strong> Admins can view a list of all users registered for a specific event.</li>
-                    <li><strong>Real-Time Q&A:</strong> A dedicated page for each event featuring a live chat room, built with WebSockets, allowing for real-time interaction.</li>
-                    <li><strong>Interactive Map:</strong> Event locations are displayed on a dynamic map using Leaflet.js.</li>
-                    <li><strong>Dockerized Environment:</strong> The entire application stack is containerized, allowing it to run anywhere with a single `docker-compose up` command.</li>
+                    <li><strong>Secure User Authentication:</strong> Full registration, login, and logout functionality using API tokens.</li>
+                    <li><strong>Personalized Pantry Management:</strong> Users can perform full CRUD (Create, Read, Update, Delete) operations on their own private list of ingredients.</li>
+                    <li><strong>Smart Recipe Finder:</strong> The core feature that intelligently suggests recipes the user can cook with 100% of the required ingredients.</li>
+                    <li><strong>Interactive Recipe Details:</strong> Users can click on a suggested recipe to view its full details, including a formatted ingredient list and cooking instructions.</li>
+                    <li><strong>Decoupled Architecture:</strong> A modern full-stack structure with a standalone React frontend communicating with a dedicated Laravel API backend.</li>
                 </ul>
             </section>
 
@@ -280,15 +279,15 @@
                 <div class="metrics-grid">
                     <div class="metric">
                         <div class="metric-value">100%</div>
-                        <div class="metric-label">Replicable Dev Environment</div>
-                    </div>
-                    <div class="metric">
-                        <div class="metric-value">&lt;1s</div>
-                        <div class="metric-label">Real-Time Message Latency</div>
+                        <div class="metric-label">Ingredient Match Accuracy</div>
                     </div>
                     <div class="metric">
                         <div class="metric-value">50%</div>
-                        <div class="metric-label">Faster Developer Onboarding</div>
+                        <div class="metric-label">Reduction in Food Waste (Projected)</div>
+                    </div>
+                    <div class="metric">
+                        <div class="metric-value">100s</div>
+                        <div class="metric-label">of Recipes Searched</div>
                     </div>
                 </div>
             </section>
@@ -298,90 +297,17 @@
                 <div class="gallery-grid">
                     <div class="gallery-item">
                         <div class="slideshow-container">
-                            <div class="slide fade active">
-                                <img src="images/campushub0.png" alt="Title">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushub11.jpeg" alt="Login">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushub10.jpeg" alt="Light Mode">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushub9.jpeg" alt="Dark Mode">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushub7.jpeg" alt="Event Details">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushub8.jpeg" alt="Edit Event">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushub6.jpeg" alt="List of Participants">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushub4.jpeg" alt="Live Q&A Event">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushub5.jpeg" alt="Add New Event">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushub3.jpeg" alt="New Event Added">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushub2.jpeg" alt="Delete Event">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushub1.jpeg" alt="Event Deleted">
-                            </div>
+                            <div class="slide fade active"><img src="images/dapurpintar0.png" alt="Title"></div>
+                            <div class="slide fade"><img src="images/dapurpintar1.jpeg" alt="Login Page"></div>
+                            <div class="slide fade"><img src="images/dapurpintar2.jpeg" alt="Register Page"></div>
+                            <div class="slide fade"><img src="images/dapurpintar3.jpeg" alt="Add Ingredient"></div>
+                            <div class="slide fade"><img src="images/dapurpintar4.jpeg" alt="After Adding"></div>
+                            <div class="slide fade"><img src="images/dapurpintar5.jpeg" alt="Find Recipes"></div>
+                            <div class="slide fade"><img src="images/dapurpintar6.jpeg" alt="Recipes Found"></div>
+                            <div class="slide fade"><img src="images/dapurpintar7.jpeg" alt="Detail Recipe"></div>
                             <a class="prev" href="#">❮</a>
                             <a class="next" href="#">❯</a>
-                            <div class="slide-indicators">
-                                <div class="indicator"></div>
-                                <div class="indicator"></div>
-                                <div class="indicator"></div>
-                                <div class="indicator"></div>
-                                <div class="indicator"></div>
-                                <div class="indicator"></div>
-                                <div class="indicator"></div>
-                                <div class="indicator"></div>
-                                <div class="indicator"></div>
-                                <div class="indicator"></div>
-                                <div class="indicator"></div>
-                                <div class="indicator"></div>
-                            </div>
-                        </div>
-                        <p>CampusHub Application Admin Interface</p>
-                    </div>
-
-                    <div class="gallery-item">
-                        <div class="slideshow-container">
-                            <div class="slide fade active">
-                                <img src="images/campushubb0.png" alt="Title">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushubb1.jpeg" alt="Register">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushubb2.jpeg" alt="Login">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushubb3.jpeg" alt="List of Events">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushubb4.jpeg" alt="Event Details">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushubb5.jpeg" alt="Register Event">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushubb6.jpeg" alt="Live Q&A Event">
-                            </div>
-                            <div class="slide fade">
-                                <img src="images/campushubb7.jpeg" alt="Dark Mode">
-                            </div>
-                            <a class="prev" href="#">❮</a>
-                            <a class="next" href="#">❯</a>
+                            
                             <div class="slide-indicators">
                                 <div class="indicator"></div>
                                 <div class="indicator"></div>
@@ -393,19 +319,25 @@
                                 <div class="indicator"></div>
                             </div>
                         </div>
-                        <p>CampusHub Application Participant Interface</p>
+                        <p>DapurPintar Application Interface</p>
                     </div>
                 </div>
             </section>
 
             <section class="cta-section animate-on-scroll">
-                <h2>Interested in this project?</h2>
-                <p>Feel free to check out the source code on my GitHub repository.</p>
+                <h2>Interested in my project?</h2>
+                <p>I am open to collaboration opportunities or further discussion about similar projects.</p>
                 <div class="cta-buttons">
-                    <a href="https://github.com/tajri15/campus-hub" class="btn btn-github" target="_blank">
-                        <i class="fab fa-github"></i> View on GitHub
+                    <a href="https://wa.me/6282284720393" class="btn btn-primary">
+                        <i class="fab fa-whatsapp"></i> Contact Me
                     </a>
-                    <a href="index.html" class="btn btn-secondary">See Other Projects</a>
+                    <!-- Ganti dengan URL repo GitHub Anda -->
+                    <a href="https://github.com/tajri15/dapurpintar-api-v2" class="btn btn-github" target="_blank">
+                        <i class="fab fa-github"></i> View Backend on GitHub
+                    </a>
+                    <a href="https://github.com/tajri15/dapurpintar-frontend" class="btn btn-github" target="_blank">
+                        <i class="fab fa-github"></i> View Frontend on GitHub
+                    </a>
                 </div>
             </section>
         </main>
@@ -442,6 +374,7 @@
                 current = index;
             }
             
+            // Tombol previous
             prev.addEventListener('click', (e) => {
                 e.preventDefault();
                 let newIndex = current - 1;
@@ -449,6 +382,7 @@
                 showSlide(newIndex);
             });
             
+            // Tombol next
             next.addEventListener('click', (e) => {
                 e.preventDefault();
                 let newIndex = current + 1;
@@ -456,6 +390,7 @@
                 showSlide(newIndex);
             });
             
+            // Klik indikator
             indicators.forEach((indicator, index) => {
                 indicator.addEventListener('click', (e) => {
                     e.preventDefault();
@@ -463,8 +398,11 @@
                 });
             });
             
+            // Mulai dengan slide pertama
             showSlide(0);
         }
+
+        // Inisialisasi semua slideshow saat dokumen siap
         document.addEventListener('DOMContentLoaded', function() {
             document.querySelectorAll('.slideshow-container').forEach(setupSlideshow);
         });
