@@ -141,6 +141,16 @@
                             <span class="tech-name">Spring Boot</span>
                             <div class="tech-level"><div class="tech-level-bar" style="width: 65%"></div></div>
                         </div>
+                        <div class="tech-item" data-tech="springsecurity" data-level="65">
+                            <i class="fas fa-shield-alt tech-icon"></i>
+                            <span class="tech-name">Spring Security</span>
+                            <div class="tech-level"><div class="tech-level-bar" style="width: 60%"></div></div>
+                        </div>
+                        <div class="tech-item" data-tech="jpa" data-level="65">
+                            <i class="fas fa-layer-group tech-icon"></i>
+                            <span class="tech-name">JPA / Hibernate</span>
+                            <div class="tech-level"><div class="tech-level-bar" style="width: 65%"></div></div>
+                        </div>
                          <div class="tech-item" data-tech="php" data-level="65">
                             <i class="fab fa-php tech-icon"></i>
                             <span class="tech-name">PHP</span>
@@ -223,6 +233,21 @@
                             <span class="tech-name">Postman</span>
                             <div class="tech-level"><div class="tech-level-bar" style="width: 85%"></div></div>
                         </div>
+                        <div class="tech-item" data-tech="maven" data-level="65">
+                            <i class="fas fa-archive tech-icon"></i>
+                            <span class="tech-name">Maven</span>
+                            <div class="tech-level"><div class="tech-level-bar" style="width: 70%"></div></div>
+                        </div>
+                        <div class="tech-item" data-tech="junit" data-level="65">
+                            <i class="fas fa-vial tech-icon"></i>
+                            <span class="tech-name">JUnit 5</span>
+                            <div class="tech-level"><div class="tech-level-bar" style="width: 60%"></div></div>
+                        </div>
+                        <div class="tech-item" data-tech="mockito" data-level="65">
+                            <i class="fas fa-user-secret tech-icon"></i>
+                            <span class="tech-name">Mockito</span>
+                            <div class="tech-level"><div class="tech-level-bar" style="width: 60%"></div></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -230,46 +255,6 @@
 
         <section id="projects" class="animated-section">
             <h2><i class="fas fa-project-diagram section-icon"></i> Featured Projects</h2>
-            <div class="project-card">
-                <div class="project-preview">
-                    <div class="mockup-container">
-                        <div class="mockup-frame">
-                            <img src="images/clinicapi.png" alt="ClinicAPI Backend System">
-                        </div>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <h3>ClinicAPI - Doctor Booking System</h3>
-                    <p>
-                        A robust backend REST API for an online doctor consultation booking system. Built with Java Spring Boot, secured with JWT, tested, and fully containerized with Docker.
-                    </p>
-                    <div class="project-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Secure JWT-based Authentication</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Role-Based Access (Admin & Patient)</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Fully Containerized with Docker & Docker Compose</span>
-                        </div>
-                    </div>
-                    <div class="tech-stack">
-                        <span>Java</span>
-                        <span>Spring Boot</span>
-                        <span>Spring Security</span>
-                        <span>PostgreSQL</span>
-                        <span>JPA/Hibernate</span>
-                        <span>Docker</span>
-                    </div>
-                    <a href="https://github.com/tajri15/Clinic-API" target="_blank" class="btn btn-primary">
-                        <i class="fab fa-github"></i> View on GitHub
-                    </a>
-                </div>
-            </div>
 
             <div class="project-card">
                 <div class="project-preview">
@@ -307,6 +292,89 @@
                         <span>Leaflet.js</span>
                     </div>
                     <a href="siamalin.html" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> View Project Details
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-preview">
+                    <div class="mockup-container">
+                        <div class="mockup-frame">
+                            <img src="images/clinicapi.png" alt="ClinicAPI Full-Stack Application">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>ClinicAPI - Full-Stack Doctor Booking System</h3>
+                    <p>
+                        A complete full-stack application for an online doctor consultation booking system, featuring a robust Java Spring Boot backend and a modern React frontend. The entire application is containerized with Docker.
+                    </p>
+                    <div class="project-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Full-Stack Java + React</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Secure JWT-based Authentication</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Role-Based Access (Admin & Patient)</span>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                        <span>Spring Boot</span>
+                        <span>React</span>
+                        <span>TypeScript</span>
+                        <span>PostgreSQL</span>
+                        <span>Docker</span>
+                    </div>
+                    <a href="clinic-api.html" class="btn btn-primary">
+                        <i class="fas fa-external-link-alt"></i> View Project Details
+                    </a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-preview">
+                    <div class="mockup-container">
+                        <div class="mockup-frame">
+                            <img src="images/campushub.png" alt="CampusHub Application">
+                        </div>
+                    </div>
+                </div>
+                <div class="project-details">
+                    <h3>CampusHub - Event Management System</h3>
+                    <p>
+                        A full-stack, real-time campus event management platform built with a microservices-style architecture. The backend is powered by Java (Spring Boot) and the frontend by PHP (CodeIgniter), all fully containerized with Docker.
+                    </p>
+                    <div class="project-highlights">
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Microservices Architecture (Java + PHP)</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Real-Time Q&A with WebSockets</span>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Fully Containerized with Docker</span>
+                        </div>
+                    </div>
+                    <div class="tech-stack">
+                        <span>Java</span>
+                        <span>Spring Boot</span>
+                        <span>PHP</span>
+                        <span>CodeIgniter</span>
+                        <span>MySQL</span>
+                        <span>WebSockets</span>
+                        <span>Docker</span>
+                    </div>
+                    <a href="campus-hub.html" class="btn btn-primary">
                         <i class="fas fa-external-link-alt"></i> View Project Details
                     </a>
                 </div>
@@ -396,48 +464,6 @@
                 <div class="project-preview">
                     <div class="mockup-container">
                         <div class="mockup-frame">
-                            <img src="images/campushub.png" alt="CampusHub Application">
-                        </div>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <h3>CampusHub - Event Management System</h3>
-                    <p>
-                        A full-stack, real-time campus event management platform built with a microservices-style architecture. The backend is powered by Java (Spring Boot) and the frontend by PHP (CodeIgniter), all fully containerized with Docker.
-                    </p>
-                    <div class="project-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Microservices Architecture (Java + PHP)</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Real-Time Q&A with WebSockets</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Fully Containerized with Docker</span>
-                        </div>
-                    </div>
-                    <div class="tech-stack">
-                        <span>Java</span>
-                        <span>Spring Boot</span>
-                        <span>PHP</span>
-                        <span>CodeIgniter</span>
-                        <span>MySQL</span>
-                        <span>WebSockets</span>
-                        <span>Docker</span>
-                    </div>
-                    <a href="campus-hub.html" class="btn btn-primary">
-                        <i class="fas fa-external-link-alt"></i> View Project Details
-                    </a>
-                </div>
-            </div>
-
-            <div class="project-card">
-                <div class="project-preview">
-                    <div class="mockup-container">
-                        <div class="mockup-frame">
                             <img src="images/dapurpintar.png" alt="DapurPintar Application">
                         </div>
                     </div>
@@ -470,7 +496,6 @@
                         <span>SQLite</span>
                         <span>Postman</span>
                     </div>
-                    <!-- Buat file baru bernama dapurpintar.html untuk detailnya -->
                     <a href="dapurpintar.html" class="btn btn-primary">
                         <i class="fas fa-external-link-alt"></i> View Project Details
                     </a>
