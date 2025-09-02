@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go-Pulse Project - Tajri's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS untuk slideshow dan tombol kembali, sama seperti template Anda */
+        .slideshow-container { position: relative; max-width: 800px; margin: 0 auto 25px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.7); aspect-ratio: 16/9; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); }
+        .slide { display: none; width: 100%; height: 100%; position: relative; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; background: white; }
+        .prev, .next { cursor: pointer; position: absolute; top: 50%; width: 45px; height: 45px; margin-top: -22px; color: white; font-weight: bold; font-size: 22px; transition: all 0.3s ease; border-radius: 50%; background-color: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 100; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); }
+        .prev { left: 15px; }
+        .next { right: 15px; }
+        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.9); transform: scale(1.1); box-shadow: 0 0 15px rgba(255,255,255,0.3); }
+        .slide-indicators { position: absolute; bottom: 20px; left: 0; right: 0; display: flex; justify-content: center; gap: 10px; z-index: 10; }
+        .indicator { width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.3s ease; }
+        .indicator.active { background-color: white; transform: scale(1.3); box-shadow: 0 0 10px rgba(255,255,255,0.8); }
+        .fade { animation-name: fade; animation-duration: 0.6s; }
+        @keyframes fade { from {opacity: .4} to {opacity: 1} }
+        .slide { display: none; }
+        .slide.active { display: block; }
+        .space-back-button { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 50px; background-color: rgba(44, 62, 80, 0.7); color: white; border: 2px solid var(--primary-color); text-decoration: none; font-size: 1rem; font-weight: 600; box-shadow: 0 0 15px rgba(52, 152, 219, 0.6), inset 0 0 5px rgba(52, 152, 219, 0.4); transition: all 0.3s ease-out; animation: pulse-glow 3s infinite alternate; }
+        .space-back-button i { font-size: 1.2rem; }
+        .space-back-button:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(52, 152, 219, 1), inset 0 0 8px rgba(52, 152, 219, 0.7); border-color: #6ac5ff; animation-play-state: paused; }
+        @keyframes pulse-glow { from { box-shadow: 0 0 10px rgba(52, 152, 219, 0.4), inset 0 0 5px rgba(52, 152, 219, 0.2); } to { box-shadow: 0 0 20px rgba(52, 152, 219, 0.8), inset 0 0 8px rgba(52, 152, 219, 0.5); } }
+    </style>
+</head>
+<body>
+
+    <div class="container project-detail">
+        <header class="project-header">
+            <a href="index.html" class="space-back-button" title="Back to Portfolio">
+                <i class="fas fa-rocket"></i>
+                <span>Back to Portfolio</span>
+            </a>
+            <h1>Go-Pulse - Real Time Uptime Monitoring System</h1>
+        </header>
+
+        <main>
+            <section class="animate-on-scroll">
+                <h2>Project Summary</h2>
+                <p>
+                    Go-Pulse is a full-stack, real-time service monitoring application built from scratch to showcase modern development practices. The backend, built with Go (Golang), leverages concurrency to perform efficient, simultaneous health checks on multiple targets. Real-time status updates are pushed to a reactive Vue.js frontend via WebSockets, creating a seamless and interactive user experience. The entire application stack is containerized with Docker, ensuring easy and consistent deployment.
+                </p>
+            </section>
+
+            <section class="animate-on-scroll delay-1">
+                <h2>Technologies Used</h2>
+                <ul class="tech-list">
+                    <li><strong>Backend:</strong> Go (Golang), Gin Web Framework, Gorilla WebSocket</li>
+                    <li><strong>Frontend:</strong> Vue.js 3 (Composition API), Vite, Tailwind CSS</li>
+                    <li><strong>Database:</strong> PostgreSQL</li>
+                    <li><strong>Authentication:</strong> JSON Web Tokens (JWT)</li>
+                    <li><strong>Deployment:</strong> Docker, Docker Compose</li>
+                    <li><strong>Real-Time Communication:</strong> WebSockets</li>
+                </ul>
+            </section>
+            
+            <section class="animate-on-scroll delay-2">
+                <h2>Challenge & Solution</h2>
+                <div class="challenge-box">
+                    <h3>Challenge</h3>
+                    <p>The core challenge was to design a system capable of performing numerous network checks concurrently without blocking the main application, while simultaneously pushing status updates to multiple users in real-time. This required a robust solution for managing background tasks and maintaining persistent, user-specific connections.</p>
+                    
+                    <h3>Solution</h3>
+                    <p>A concurrent worker pool was implemented in Go using goroutines and channels to handle the health checks efficiently. For real-time updates, a WebSocket "Hub" was created to manage the lifecycle of client connections. When a worker completes a check, it sends the result to the Hub, which then broadcasts the update to the specific user connected, ensuring instant feedback on the frontend dashboard.</p>
+                </div>
+            </section>
+
+            <section class="animate-on-scroll delay-1">
+                <h2>Main Features</h2>
+                <ul>
+                    <li><strong>Multi-Type Monitoring:</strong> Users can monitor services via HTTP status, specific keyword presence on a webpage, or raw TCP port connection.</li>
+                    <li><strong>Real-Time Dashboard:</strong> The frontend updates automatically with status changes, response times, and last-checked data without needing a page refresh.</li>
+                    <li><strong>Secure Authentication:</strong> A complete JWT-based authentication flow (register, login, logout) protects all user-specific endpoints.</li>
+                    <li><strong>Historical Data Visualization:</strong> Interactive charts display the response time history for each monitor, with selectable time ranges (24h, 7d, 30d).</li>
+                    <li><strong>Full CRUD Functionality:</strong> Users can securely add, view, and delete their own monitoring targets.</li>
+                    <li><strong>Containerized Environment:</strong> The entire application (Go backend, PostgreSQL DB, Vue frontend) runs in a portable and isolated environment managed by Docker Compose.</li>
+                </ul>
+            </section>
+
+            <section id="gallery">
+                <h2>Screenshot Gallery</h2>
+                <div class="slideshow-container">
+                    <div class="slide fade active"><img src="images/gopulse0.png" alt="Title"></div>
+                    <div class="slide fade"><img src="images/gopulse1.jpeg" alt="Login Page"></div>
+                    <div class="slide fade"><img src="images/gopulse2.jpeg" alt="Register Page"></div>
+                    <div class="slide fade"><img src="images/gopulse3.jpeg" alt="Dashboard"></div>
+                    <div class="slide fade"><img src="images/gopulse4.jpeg" alt="History Chart Modal"></div>
+                    
+                    <a class="prev" href="#">❮</a>
+                    <a class="next" href="#">❯</a>
+                    <div class="slide-indicators">
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section animate-on-scroll">
+                <h2>Interested in this project?</h2>
+                <p>Feel free to check out the source code on my GitHub repository.</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/tajri15/go-pulse-monitoring" class="btn btn-github" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="index.html" class="btn btn-secondary">See Other Projects</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/tajri15" target="_blank"><i class="fab fa-github"></i> GitHub</a> &bull;
+                <a href="https://linkedin.com/in/tajriramalmuzi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &bull;
+                <a href="mailto:ramalmuzitajri@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+            <p class="copyright">&copy; 2025 - Created by Tajri Ramal Muzi</p>
+        </footer>
+    </div>
+
+    <script>
+        // Fungsi untuk slideshow
+        function setupSlideshow(slideshow) {
+            const slides = slideshow.querySelectorAll('.slide');
+            const prev = slideshow.querySelector('.prev');
+            const next = slideshow.querySelector('.next');
+            const indicators = slideshow.querySelectorAll('.indicator');
+            let current = 0;
+            
+            function showSlide(index) {
+                if (!slides[index] || !indicators[index]) return;
+                slides.forEach(slide => slide.style.display = 'none');
+                indicators.forEach(ind => ind.classList.remove('active'));
+                slides[index].classList.remove('active');
+
+                slides[index].style.display = 'block';
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+                current = index;
+            }
+            
+            if (prev && next) {
+                prev.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let newIndex = current - 1;
+                    if (newIndex < 0) newIndex = slides.length - 1;
+                    showSlide(newIndex);
+                });
+                next.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let newIndex = current + 1;
+                    if (newIndex >= slides.length) newIndex = 0;
+                    showSlide(newIndex);
+                });
+            }
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showSlide(index);
+                });
+            });
+            
+            showSlide(0);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.slideshow-container').forEach(setupSlideshow);
+        });
+    </script>
+    <script src="js/animasi.js"></script>
+</body>
+</html>
