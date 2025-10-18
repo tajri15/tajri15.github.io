@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuctech Transmission Dashboard - Tajri's Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* CSS untuk slideshow dan tombol kembali, sama seperti template Anda */
+        .slideshow-container { position: relative; max-width: 800px; margin: 0 auto 25px; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,0.7); aspect-ratio: 16/9; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); }
+        .slide { display: none; width: 100%; height: 100%; position: relative; }
+        .slide img { width: 100%; height: 100%; object-fit: cover; background: white; }
+        .prev, .next { cursor: pointer; position: absolute; top: 50%; width: 45px; height: 45px; margin-top: -22px; color: white; font-weight: bold; font-size: 22px; transition: all 0.3s ease; border-radius: 50%; background-color: rgba(0,0,0,0.6); display: flex; align-items: center; justify-content: center; z-index: 100; backdrop-filter: blur(5px); border: 1px solid rgba(255,255,255,0.3); }
+        .prev { left: 15px; }
+        .next { right: 15px; }
+        .prev:hover, .next:hover { background-color: rgba(0,0,0,0.9); transform: scale(1.1); box-shadow: 0 0 15px rgba(255,255,255,0.3); }
+        .slide-indicators { position: absolute; bottom: 20px; left: 0; right: 0; display: flex; justify-content: center; gap: 10px; z-index: 10; }
+        .indicator { width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255,255,255,0.4); cursor: pointer; transition: all 0.3s ease; }
+        .indicator.active { background-color: white; transform: scale(1.3); box-shadow: 0 0 10px rgba(255,255,255,0.8); }
+        .fade { animation-name: fade; animation-duration: 0.6s; }
+        @keyframes fade { from {opacity: .4} to {opacity: 1} }
+        .slide { display: none; }
+        .slide.active { display: block; }
+        .space-back-button { display: inline-flex; align-items: center; gap: 10px; padding: 12px 24px; border-radius: 50px; background-color: rgba(44, 62, 80, 0.7); color: white; border: 2px solid var(--primary-color); text-decoration: none; font-size: 1rem; font-weight: 600; box-shadow: 0 0 15px rgba(52, 152, 219, 0.6), inset 0 0 5px rgba(52, 152, 219, 0.4); transition: all 0.3s ease-out; animation: pulse-glow 3s infinite alternate; }
+        .space-back-button i { font-size: 1.2rem; }
+        .space-back-button:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(52, 152, 219, 1), inset 0 0 8px rgba(52, 152, 219, 0.7); border-color: #6ac5ff; animation-play-state: paused; }
+        @keyframes pulse-glow { from { box-shadow: 0 0 10px rgba(52, 152, 219, 0.4), inset 0 0 5px rgba(52, 152, 219, 0.2); } to { box-shadow: 0 0 20px rgba(52, 152, 219, 0.8), inset 0 0 8px rgba(52, 152, 219, 0.5); } }
+    </style>
+</head>
+<body>
+
+    <div class="container project-detail">
+        <header class="project-header">
+            <a href="index.html" class="space-back-button" title="Back to Portfolio">
+                <i class="fas fa-rocket"></i>
+                <span>Back to Portfolio</span>
+            </a>
+            <h1>Nuctech Transmission Dashboard</h1>
+        </header>
+
+        <main>
+            <section class="animate-on-scroll">
+                <h2>Project Summary</h2>
+                <p>
+                    Nuctech Transmission Dashboard is a real-time monitoring application designed to track and visualize container scanner logs from Nuctech systems. The application features live data updates, comprehensive statistics overview, and detailed log viewing with advanced filtering capabilities. Built with a modern tech stack, it provides an intuitive interface for monitoring transmission activities and system performance.
+                </p>
+            </section>
+
+            <section class="animate-on-scroll delay-1">
+                <h2>Technologies Used</h2>
+                <ul class="tech-list">
+                    <li><strong>Frontend:</strong> React, TypeScript, Ant Design</li>
+                    <li><strong>Backend:</strong> Node.js, Express.js</li>
+                    <li><strong>Database:</strong> PostgreSQL</li>
+                    <li><strong>Real-Time Communication:</strong> Socket.IO</li>
+                    <li><strong>UI Framework:</strong> Ant Design</li>
+                    <li><strong>Development Tools:</strong> Git, Postman</li>
+                </ul>
+            </section>
+            
+            <section class="animate-on-scroll delay-2">
+                <h2>Challenge & Solution</h2>
+                <div class="challenge-box">
+                    <h3>Challenge</h3>
+                    <p>The primary challenge was to create a system capable of handling and displaying real-time log data from multiple Nuctech scanners simultaneously. This required efficient data processing, real-time updates to multiple clients, and an intuitive interface for filtering and analyzing large volumes of log data.</p>
+                    
+                    <h3>Solution</h3>
+                    <p>A WebSocket-based architecture using Socket.IO was implemented to enable real-time data transmission between the server and multiple dashboard clients. The backend efficiently processes incoming log data and broadcasts updates to all connected clients. The frontend utilizes React with Ant Design components to create a responsive and user-friendly interface with advanced filtering and search capabilities.</p>
+                </div>
+            </section>
+
+            <section class="animate-on-scroll delay-1">
+                <h2>Main Features</h2>
+                <ul>
+                    <li><strong>Real-Time Log Monitoring:</strong> Live updates of scanner transmission logs via WebSocket connections.</li>
+                    <li><strong>Statistics Dashboard:</strong> Comprehensive overview with key metrics and performance indicators.</li>
+                    <li><strong>Advanced Filtering:</strong> Interactive filtering and search capabilities for log data analysis.</li>
+                    <li><strong>Responsive Design:</strong> Optimized for various screen sizes and devices.</li>
+                    <li><strong>Data Visualization:</strong> Charts and graphs for better understanding of transmission patterns.</li>
+                    <li><strong>User Management:</strong> Role-based access control for different user types.</li>
+                    <li><strong>Export Functionality:</strong> Ability to export filtered log data for further analysis.</li>
+                </ul>
+            </section>
+
+            <section id="gallery">
+                <h2>Screenshot Gallery</h2>
+                <div class="slideshow-container">
+                    <div class="slide fade active"><img src="images/nuctech1.png" alt="Nuctech Dashboard Overview"></div>
+                    <div class="slide fade"><img src="images/nuctech2.png" alt="Real-Time Log Monitoring"></div>
+                    <div class="slide fade"><img src="images/nuctech3.png" alt="Statistics and Analytics"></div>
+                    <div class="slide fade"><img src="images/nuctech4.png" alt="Filtering and Search Interface"></div>
+                    <div class="slide fade"><img src="images/nuctech5.png" alt="Data Visualization Charts"></div>
+                    
+                    <a class="prev" href="#">❮</a>
+                    <a class="next" href="#">❯</a>
+                    <div class="slide-indicators">
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                        <div class="indicator"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section animate-on-scroll">
+                <h2>Interested in this project?</h2>
+                <p>Feel free to check out the source code on my GitHub repository.</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/tajri15/WebsiteNuctech.git" class="btn btn-github" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                    <a href="index.html" class="btn btn-secondary">See Other Projects</a>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://github.com/tajri15" target="_blank"><i class="fab fa-github"></i> GitHub</a> &bull;
+                <a href="https://linkedin.com/in/tajriramalmuzi" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a> &bull;
+                <a href="mailto:ramalmuzitajri@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+            </div>
+            <p class="copyright">&copy; 2025 - Created by Tajri Ramal Muzi</p>
+        </footer>
+    </div>
+
+    <script>
+        // Fungsi untuk slideshow
+        function setupSlideshow(slideshow) {
+            const slides = slideshow.querySelectorAll('.slide');
+            const prev = slideshow.querySelector('.prev');
+            const next = slideshow.querySelector('.next');
+            const indicators = slideshow.querySelectorAll('.indicator');
+            let current = 0;
+            
+            function showSlide(index) {
+                if (!slides[index] || !indicators[index]) return;
+                slides.forEach(slide => slide.style.display = 'none');
+                indicators.forEach(ind => ind.classList.remove('active'));
+                slides[index].classList.remove('active');
+
+                slides[index].style.display = 'block';
+                slides[index].classList.add('active');
+                indicators[index].classList.add('active');
+                current = index;
+            }
+            
+            if (prev && next) {
+                prev.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let newIndex = current - 1;
+                    if (newIndex < 0) newIndex = slides.length - 1;
+                    showSlide(newIndex);
+                });
+                next.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let newIndex = current + 1;
+                    if (newIndex >= slides.length) newIndex = 0;
+                    showSlide(newIndex);
+                });
+            }
+            
+            indicators.forEach((indicator, index) => {
+                indicator.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showSlide(index);
+                });
+            });
+            
+            showSlide(0);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.slideshow-container').forEach(setupSlideshow);
+        });
+    </script>
+    <script src="js/animasi.js"></script>
+</body>
+</html>
