@@ -1629,3 +1629,18 @@ body.light-theme .back-button {
 .carousel-item-enter {
     animation: slideIn 0.5s ease forwards;
 }
+
+/* Smooth scrolling for carousel */
+.carousel-container {
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar but keep functionality */
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
