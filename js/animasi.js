@@ -42,9 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // 14. PROCESS TIMELINE ANIMATION
     initProcessTimeline();
 
-    // 15. PROJECT CAROUSEL
-    initProjectCarousel();
-
     // ===== FUNCTION DEFINITIONS =====
 
     // 1. SPACE BACKGROUND CREATION
@@ -374,35 +371,32 @@ document.addEventListener('DOMContentLoaded', function() {
                 card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
             });
         });
-        
-        // Fungsi baru untuk efek mockup
-        function initMockupEffects() {
-            document.querySelectorAll('.mockup-container').forEach(container => {
-                const frame = container.querySelector('.mockup-frame');
-                const img = frame.querySelector('img');
-                
-                container.addEventListener('mousemove', (e) => {
-                    const rect = container.getBoundingClientRect();
-                    const x = e.clientX - rect.left;
-                    const y = e.clientY - rect.top;
-                    const centerX = rect.width / 2;
-                    const centerY = rect.height / 2;
-                    
-                    const relX = x - centerX;
-                    const relY = y - centerY;
-                    
-                    img.style.transform = `translate(-50%, -50%) translate(${relX * 0.05}px, ${relY * 0.05}px) scale(1.05)`;
-                    frame.style.transform = `rotateY(${relX * 0.1}deg) rotateX(${-relY * 0.1}deg)`;
-                });
-                
-                container.addEventListener('mouseleave', () => {
-                    img.style.transform = 'translate(-50%, -50%)';
-                    frame.style.transform = 'rotateY(0) rotateX(0)';
-                });
-            });
-        }
-        
-        initMockupEffects();
+      // Fungsi baru untuk efek mockup
+      function initMockupEffects() {
+          document.querySelectorAll('.mockup-container').forEach(container => {
+              const frame = container.querySelector('.mockup-frame');
+              const img = frame.querySelector('img');
+              
+              container.addEventListener('mousemove', (e) => {
+                  const rect = container.getBoundingClientRect();
+                  const x = e.clientX - rect.left;
+                  const y = e.clientY - rect.top;
+                  const centerX = rect.width / 2;
+                  const centerY = rect.height / 2;
+                  
+                  const relX = x - centerX;
+                  const relY = y - centerY;
+                  
+                  img.style.transform = `translate(-50%, -50%) translate(${relX * 0.05}px, ${relY * 0.05}px) scale(1.05)`;
+                  frame.style.transform = `rotateY(${relX * 0.1}deg) rotateX(${-relY * 0.1}deg)`;
+              });
+              
+              container.addEventListener('mouseleave', () => {
+                  img.style.transform = 'translate(-50%, -50%)';
+                  frame.style.transform = 'rotateY(0) rotateX(0)';
+              });
+          });
+      }
     }
 
     // 10. WELCOME POPUP
@@ -499,91 +493,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }, { threshold: 0.1 });
             
             observer.observe(step);
-        });
-    }
-
-    // 15. PROJECT CAROUSEL FUNCTIONALITY
-    function initProjectCarousel() {
-        const carouselContainer = document.querySelector('.carousel-container');
-        const prevBtn = document.querySelector('.carousel-btn.prev');
-        const nextBtn = document.querySelector('.carousel-btn.next');
-        const dots = document.querySelectorAll('.dot');
-        
-        if (!carouselContainer) return;
-        
-        const projects = document.querySelectorAll('.project-card');
-        const totalProjects = projects.length;
-        let currentIndex = 0;
-        let projectsPerView = getProjectsPerView();
-        
-        function getProjectsPerView() {
-            if (window.innerWidth < 768) return 1;
-            if (window.innerWidth < 1200) return 2;
-            return 3;
-        }
-        
-        function updateCarousel() {
-            const translateX = -currentIndex * (100 / projectsPerView);
-            carouselContainer.style.transform = `translateX(${translateX}%)`;
-            
-            // Update dots
-            dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentIndex);
-            });
-            
-            // Update button states
-            prevBtn.disabled = currentIndex === 0;
-            nextBtn.disabled = currentIndex >= Math.ceil(totalProjects / projectsPerView) - 1;
-        }
-        
-        function nextSlide() {
-            const maxIndex = Math.ceil(totalProjects / projectsPerView) - 1;
-            if (currentIndex < maxIndex) {
-                currentIndex++;
-                updateCarousel();
-            }
-        }
-        
-        function prevSlide() {
-            if (currentIndex > 0) {
-                currentIndex--;
-                updateCarousel();
-            }
-        }
-        
-        function goToSlide(index) {
-            currentIndex = index;
-            updateCarousel();
-        }
-        
-        // Event listeners
-        nextBtn.addEventListener('click', nextSlide);
-        prevBtn.addEventListener('click', prevSlide);
-        
-        dots.forEach((dot, index) => {
-            dot.addEventListener('click', () => goToSlide(index));
-        });
-        
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            projectsPerView = getProjectsPerView();
-            currentIndex = 0;
-            updateCarousel();
-        });
-        
-        // Initialize carousel
-        updateCarousel();
-        
-        // Auto-advance carousel (optional)
-        let autoSlideInterval = setInterval(nextSlide, 5000);
-        
-        // Pause auto-slide on hover
-        carouselContainer.addEventListener('mouseenter', () => {
-            clearInterval(autoSlideInterval);
-        });
-        
-        carouselContainer.addEventListener('mouseleave', () => {
-            autoSlideInterval = setInterval(nextSlide, 5000);
         });
     }
 
