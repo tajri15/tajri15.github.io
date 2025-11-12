@@ -14,7 +14,7 @@
         .slideshow-container {
             position: relative;
             max-width: 375px;
-            margin: 0 auto 25px;
+            margin: 0 auto 15px;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.7);
@@ -94,13 +94,24 @@
             backdrop-filter: blur(8px);
         }
 
-        .gallery-item p {
+        .gallery-item-title {
             text-align: center;
-            margin-top: 18px;
+            margin-bottom: 18px;
             font-weight: 600;
             color: white;
-            font-size: 1.2em;
+            font-size: 1.3em;
             text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+        }
+
+        .slide-description {
+            text-align: center;
+            margin-top: 15px;
+            color: #e0e0e0;
+            font-size: 0.95em;
+            line-height: 1.4;
+            min-height: 40px;
+            padding: 0 10px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
 
         /* ===== SLIDE INDICATORS ===== */
@@ -133,7 +144,7 @@
         @media (min-width: 768px) {
             .slideshow-container {
                 max-width: 375px;
-                margin: 0 auto 30px;
+                margin: 0 auto 20px;
             }
         }
 
@@ -263,6 +274,7 @@
                 <div class="gallery-grid">
                     
                     <div class="gallery-item">
+                        <div class="gallery-item-title">Login Screens</div>
                         <div class="slideshow-container">
                             <div class="slide fade active">
                                 <img src="images/login0.png" alt="App Title Screen">
@@ -277,10 +289,13 @@
                                 <div class="indicator"></div>
                             </div>
                         </div>
-                        <p>Login Screens</p>
+                        <div class="slide-description" id="login-description">
+                            Welcome screen and secure login interface for officer authentication
+                        </div>
                     </div>
 
                     <div class="gallery-item">
+                        <div class="gallery-item-title">User Dashboard</div>
                         <div class="slideshow-container">
                             <div class="slide fade active">
                                 <img src="images/dashboard0.png" alt="Dashboard Title">
@@ -299,10 +314,13 @@
                                 <div class="indicator"></div>
                             </div>
                         </div>
-                        <p>User Dashboard</p>
+                        <div class="slide-description" id="dashboard-description">
+                            Main dashboard showing attendance status and navigation menu
+                        </div>
                     </div>
                     
                     <div class="gallery-item">
+                        <div class="gallery-item-title">Attendance Process</div>
                         <div class="slideshow-container">
                             <div class="slide fade active">
                                 <img src="images/presensi0.png" alt="Attendance Title">
@@ -333,10 +351,13 @@
                                 <div class="indicator"></div>
                             </div>
                         </div>
-                        <p>Attendance Process</p>
+                        <div class="slide-description" id="attendance-description">
+                            Complete attendance flow with face recognition and location verification
+                        </div>
                     </div>
 
                     <div class="gallery-item">
+                        <div class="gallery-item-title">Patrol Initiation</div>
                         <div class="slideshow-container">
                             <div class="slide fade active">
                                 <img src="images/patroli0.png" alt="Patrol Title">
@@ -363,10 +384,13 @@
                                 <div class="indicator"></div>
                             </div>
                         </div>
-                        <p>Patrol Initiation</p>
+                        <div class="slide-description" id="patrol-description">
+                            Patrol session setup with GPS tracking and face verification
+                        </div>
                     </div>
 
                     <div class="gallery-item">
+                        <div class="gallery-item-title">Reporting System</div>
                         <div class="slideshow-container">
                             <div class="slide fade active">
                                 <img src="images/laporan0.png" alt="Report Title">
@@ -393,10 +417,13 @@
                                 <div class="indicator"></div>
                             </div>
                         </div>
-                        <p>Reporting System</p>
+                        <div class="slide-description" id="report-description">
+                            Digital reporting with photo evidence and face verification
+                        </div>
                     </div>
                     
                     <div class="gallery-item">
+                        <div class="gallery-item-title">Profile Management</div>
                         <div class="slideshow-container">
                             <div class="slide fade active">
                                 <img src="images/profil0.png" alt="Profile Title">
@@ -415,7 +442,9 @@
                                 <div class="indicator"></div>
                             </div>
                         </div>
-                        <p>Profile Management</p>
+                        <div class="slide-description" id="profile-description">
+                            Officer profile management and personal information updates
+                        </div>
                     </div>
                 </div>
             </section>
@@ -462,12 +491,53 @@
     </div>
 
     <script>
+        // Deskripsi detail untuk setiap slide
+        const slideDescriptions = {
+            'login': [
+                "App welcome screen with SiAmalin branding",
+                "Secure login form for officer authentication"
+            ],
+            'dashboard': [
+                "Dashboard title and navigation overview",
+                "Main dashboard before attendance - showing pending status",
+                "Dashboard after successful attendance - showing completed status"
+            ],
+            'attendance': [
+                "Attendance module title screen",
+                "Loading face recognition model for verification",
+                "GPS location verification for attendance",
+                "Clock-in interface with face detection ready",
+                "Successful clock-in confirmation popup",
+                "Clock-out interface at end of shift"
+            ],
+            'patrol': [
+                "Patrol module title screen",
+                "Initializing patrol session with system check",
+                "Patrol interface before starting - showing start button",
+                "Active patrol session with live GPS tracking",
+                "Face verification required for patrol session"
+            ],
+            'report': [
+                "Reporting module title screen",
+                "List of submitted reports and their status",
+                "Detailed view of a specific incident report",
+                "Face verification for report submission",
+                "Camera interface for capturing photo evidence"
+            ],
+            'profile': [
+                "Profile module title screen",
+                "Officer profile information display",
+                "Edit profile interface for updating personal data"
+            ]
+        };
+
         // Fungsi untuk mengatur slideshow
-        function setupSlideshow(slideshow) {
+        function setupSlideshow(slideshow, category) {
             const slides = slideshow.querySelectorAll('.slide');
             const prev = slideshow.querySelector('.prev');
             const next = slideshow.querySelector('.next');
             const indicators = slideshow.querySelectorAll('.indicator');
+            const descriptionElement = slideshow.parentElement.querySelector('.slide-description');
             let current = 0;
             
             function showSlide(index) {
@@ -480,6 +550,12 @@
                 // Tampilkan slide yang dipilih
                 slides[index].style.display = 'block';
                 indicators[index].classList.add('active');
+                
+                // Update deskripsi
+                if (slideDescriptions[category] && slideDescriptions[category][index]) {
+                    descriptionElement.textContent = slideDescriptions[category][index];
+                }
+                
                 current = index;
             }
             
@@ -513,7 +589,14 @@
 
         // Inisialisasi semua slideshow saat dokumen siap
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.slideshow-container').forEach(setupSlideshow);
+            const slideshows = document.querySelectorAll('.slideshow-container');
+            const categories = ['login', 'dashboard', 'attendance', 'patrol', 'report', 'profile'];
+            
+            slideshows.forEach((slideshow, index) => {
+                if (categories[index]) {
+                    setupSlideshow(slideshow, categories[index]);
+                }
+            });
         });
     </script>
     <script src="js/animasi.js"></script>
