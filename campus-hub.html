@@ -14,7 +14,7 @@
         .slideshow-container {
             position: relative;
             max-width: 800px;
-            margin: 0 auto 25px;
+            margin: 0 auto 15px;
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 5px 20px rgba(0,0,0,0.7);
@@ -90,13 +90,24 @@
             backdrop-filter: blur(8px);
         }
 
-        .gallery-item p {
+        .gallery-item-title {
             text-align: center;
-            margin-top: 18px;
+            margin-bottom: 18px;
             font-weight: 600;
             color: white;
-            font-size: 1.2em;
+            font-size: 1.3em;
             text-shadow: 0 2px 5px rgba(0,0,0,0.7);
+        }
+
+        .slide-description {
+            text-align: center;
+            margin-top: 15px;
+            color: #e0e0e0;
+            font-size: 0.95em;
+            line-height: 1.4;
+            min-height: 40px;
+            padding: 0 10px;
+            text-shadow: 0 1px 3px rgba(0,0,0,0.8);
         }
 
         /* ===== SLIDE INDICATORS ===== */
@@ -297,42 +308,43 @@
                 <h2>Screenshot Gallery</h2>
                 <div class="gallery-grid">
                     <div class="gallery-item">
-                        <div class="slideshow-container">
+                        <div class="gallery-item-title">CampusHub Application Admin Interface</div>
+                        <div class="slideshow-container" id="admin-slideshow">
                             <div class="slide fade active">
-                                <img src="images/campushub0.png" alt="Title">
+                                <img src="images/campushub0.png" alt="CampusHub Admin Dashboard">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushub11.jpeg" alt="Login">
+                                <img src="images/campushub11.jpeg" alt="Admin Login Page">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushub10.jpeg" alt="Light Mode">
+                                <img src="images/campushub10.jpeg" alt="Admin Dashboard Light Mode">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushub9.jpeg" alt="Dark Mode">
+                                <img src="images/campushub9.jpeg" alt="Admin Dashboard Dark Mode">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushub7.jpeg" alt="Event Details">
+                                <img src="images/campushub7.jpeg" alt="Event Details Management">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushub8.jpeg" alt="Edit Event">
+                                <img src="images/campushub8.jpeg" alt="Edit Event Interface">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushub6.jpeg" alt="List of Participants">
+                                <img src="images/campushub6.jpeg" alt="Event Participants List">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushub4.jpeg" alt="Live Q&A Event">
+                                <img src="images/campushub4.jpeg" alt="Live Q&A Session Management">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushub5.jpeg" alt="Add New Event">
+                                <img src="images/campushub5.jpeg" alt="Add New Event Form">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushub3.jpeg" alt="New Event Added">
+                                <img src="images/campushub3.jpeg" alt="New Event Successfully Added">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushub2.jpeg" alt="Delete Event">
+                                <img src="images/campushub2.jpeg" alt="Delete Event Confirmation">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushub1.jpeg" alt="Event Deleted">
+                                <img src="images/campushub1.jpeg" alt="Event Successfully Deleted">
                             </div>
                             <a class="prev" href="#">❮</a>
                             <a class="next" href="#">❯</a>
@@ -351,34 +363,37 @@
                                 <div class="indicator"></div>
                             </div>
                         </div>
-                        <p>CampusHub Application Admin Interface</p>
+                        <div class="slide-description" id="admin-description">
+                            CampusHub admin dashboard overview with system navigation
+                        </div>
                     </div>
 
                     <div class="gallery-item">
-                        <div class="slideshow-container">
+                        <div class="gallery-item-title">CampusHub Application Participant Interface</div>
+                        <div class="slideshow-container" id="participant-slideshow">
                             <div class="slide fade active">
-                                <img src="images/campushubb0.png" alt="Title">
+                                <img src="images/campushubb0.png" alt="CampusHub Participant Portal">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushubb1.jpeg" alt="Register">
+                                <img src="images/campushubb1.jpeg" alt="User Registration Form">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushubb2.jpeg" alt="Login">
+                                <img src="images/campushubb2.jpeg" alt="User Login Page">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushubb3.jpeg" alt="List of Events">
+                                <img src="images/campushubb3.jpeg" alt="Events Listing Page">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushubb4.jpeg" alt="Event Details">
+                                <img src="images/campushubb4.jpeg" alt="Event Details View">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushubb5.jpeg" alt="Register Event">
+                                <img src="images/campushubb5.jpeg" alt="Event Registration Process">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushubb6.jpeg" alt="Live Q&A Event">
+                                <img src="images/campushubb6.jpeg" alt="Live Q&A Participation">
                             </div>
                             <div class="slide fade">
-                                <img src="images/campushubb7.jpeg" alt="Dark Mode">
+                                <img src="images/campushubb7.jpeg" alt="Dark Mode User Interface">
                             </div>
                             <a class="prev" href="#">❮</a>
                             <a class="next" href="#">❯</a>
@@ -393,7 +408,9 @@
                                 <div class="indicator"></div>
                             </div>
                         </div>
-                        <p>CampusHub Application Participant Interface</p>
+                        <div class="slide-description" id="participant-description">
+                            CampusHub participant portal welcome screen
+                        </div>
                     </div>
                 </div>
             </section>
@@ -421,8 +438,36 @@
     </div>
 
     <script>
-        // Fungsi untuk mengatur slideshow
-        function setupSlideshow(slideshow) {
+        // Deskripsi detail untuk setiap slide Admin Interface
+        const adminDescriptions = [
+            "CampusHub admin dashboard overview with system navigation and quick access to all management features",
+            "Secure admin login page with authentication form for administrator access",
+            "Admin dashboard in light mode showing event statistics and management options",
+            "Admin dashboard in dark mode with enhanced visual comfort for extended use",
+            "Detailed event management interface showing event information and participant count",
+            "Event editing form allowing admins to modify event details, dates, and descriptions",
+            "Comprehensive list of all participants registered for a specific event",
+            "Live Q&A session management interface showing real-time questions and responses",
+            "Form for creating new events with fields for title, description, date, and location",
+            "Confirmation screen showing successfully created event with all details",
+            "Delete event confirmation dialog with safety checks to prevent accidental deletion",
+            "Success notification confirming the event has been permanently deleted from the system"
+        ];
+
+        // Deskripsi detail untuk setiap slide Participant Interface
+        const participantDescriptions = [
+            "CampusHub participant portal welcome screen with event highlights and navigation",
+            "User registration form for new participants to create their CampusHub account",
+            "User login page for existing participants to access their account and events",
+            "Comprehensive events listing page showing all available campus events with filters",
+            "Detailed event view showing description, date, location, and registration options",
+            "Event registration process with confirmation and quota availability checking",
+            "Live Q&A participation interface allowing users to ask questions in real-time",
+            "User interface in dark mode providing comfortable viewing experience for participants"
+        ];
+
+        // Fungsi untuk mengatur slideshow dengan deskripsi
+        function setupSlideshow(slideshow, descriptions, descriptionElement) {
             const slides = slideshow.querySelectorAll('.slide');
             const prev = slideshow.querySelector('.prev');
             const next = slideshow.querySelector('.next');
@@ -439,6 +484,12 @@
                 // Tampilkan slide yang dipilih
                 slides[index].style.display = 'block';
                 indicators[index].classList.add('active');
+                
+                // Update deskripsi
+                if (descriptions[index]) {
+                    descriptionElement.textContent = descriptions[index];
+                }
+                
                 current = index;
             }
             
@@ -465,8 +516,21 @@
             
             showSlide(0);
         }
+
         document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.slideshow-container').forEach(setupSlideshow);
+            // Setup admin slideshow
+            const adminSlideshow = document.getElementById('admin-slideshow');
+            const adminDescription = document.getElementById('admin-description');
+            if (adminSlideshow) {
+                setupSlideshow(adminSlideshow, adminDescriptions, adminDescription);
+            }
+            
+            // Setup participant slideshow
+            const participantSlideshow = document.getElementById('participant-slideshow');
+            const participantDescription = document.getElementById('participant-description');
+            if (participantSlideshow) {
+                setupSlideshow(participantSlideshow, participantDescriptions, participantDescription);
+            }
         });
     </script>
     <script src="js/animasi.js"></script>
