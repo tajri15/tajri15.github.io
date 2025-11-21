@@ -460,8 +460,10 @@ document.addEventListener('DOMContentLoaded', function() {
             roles[currentIndex].classList.add('active');
         }
         
+        // Start with first role visible
         roles[0].classList.add('active');
-
+        
+        // Change role every 3 seconds
         setInterval(showNextRole, 3000);
     }
 
